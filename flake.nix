@@ -15,12 +15,16 @@
     # Shameless plug: looking for a way to nixify your themes and make
     # everything match nicely? Try nix-colors!
     # nix-colors.url = "github:misterio77/nix-colors";
+
+    # Hyprland config
+    hyprland.url = "github:hyprwm/Hyprland";
   };
 
   outputs = {
     self,
     nixpkgs,
     home-manager,
+    hyprland,
     ...
   } @ inputs: let
     inherit (self) outputs;
@@ -49,9 +53,12 @@
       "ricky@ricky-nixos" = home-manager.lib.homeManagerConfiguration {
         pkgs = nixpkgs.legacyPackages.x86_64-linux;
 	extraSpecialArgs = {inherit inputs outputs;};
-	modules = [./home-manager/home.nix];
+	modules = [
+      ./home-manager/home.nix
+      hyprland.homeManagerModules.default
+      {wayland.windowManager.hyprland.enable = true;}
+    ];
       };
     };
   };
-  # };
 }
