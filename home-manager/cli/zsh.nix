@@ -9,8 +9,8 @@
   programs.zsh = {
     enable = true;
     # shellAliases = {
-      # update-config = "home-manager switch --flake ~/nixos-config#ricky@ricky-wsl-ubuntu";
-      # edit-config   = "cd ~/nixos-config && nvim";
+      # update-config = "home-manager switch --flake ~/nix-config#ricky@ricky-wsl-ubuntu";
+      # edit-config   = "cd ~/nix-config && nvim";
     # };
     oh-my-zsh = {
       enable = true;
