@@ -3,10 +3,10 @@
 
   inputs = {
     # Nixpkgs
-    nixpkgs.url = "github:nixos/nixpkgs/nixos-23.05";
+    nixpkgs.url = "github:nixos/nixpkgs/nixos-23.11";
 
     # Home manager
-    home-manager.url = "github:nix-community/home-manager/release-23.05";
+    home-manager.url = "github:nix-community/home-manager/release-23.11";
     home-manager.inputs.nixpkgs.follows = "nixpkgs";
 
     # TODO: Add any other flake you might need
@@ -29,10 +29,10 @@
     # Available through 'nixos-rebuild --flake .#your-hostname'
     nixosConfigurations = {
       # FIXME replace with your hostname
-      your-hostname = nixpkgs.lib.nixosSystem {
+      "ricky-nixos" = nixpkgs.lib.nixosSystem {
         specialArgs = {inherit inputs outputs;};
         # > Our main nixos configuration file <
-        modules = [./nixos/configuration.nix];
+        modules = [./nixos/ricky-nixos/configuration.nix];
       };
     };
 
@@ -46,6 +46,12 @@
         # > Our main home-manager configuration file <
         modules = [./home-manager/home.nix];
       };
+      "ricky@ricky-nixos" = home-manager.lib.homeManagerConfiguration {
+        pkgs = nixpkgs.legacyPackages.x86_64-linux;
+	extraSpecialArgs = {inherit inputs outputs;};
+	modules = [./home-manager/home.nix];
+      };
     };
   };
+  # };
 }
