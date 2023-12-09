@@ -2,7 +2,7 @@
 # your system.  Help is available in the configuration.nix(5) man page
 # and in the NixOS manual (accessible by running ‘nixos-help’).
 
-{ config, pkgs, ... }:
+{ inputs, config, pkgs, ... }:
 
 {
   imports =
@@ -19,7 +19,7 @@
 
   # Configure network proxy if necessary
   # networking.proxy.default = "http://user:password@proxy:port/";
-  networking.proxy.default = "http://192.168.1.21:1082/";
+  # networking.proxy.default = "http://192.168.1.21:1082/";
   # networking.proxy.noProxy = "127.0.0.1,localhost,internal.domain";
 
   # Enable networking
@@ -53,7 +53,7 @@
   users.users.ricky = {
     isNormalUser = true;
     description = "ricky";
-    extraGroups = [ "networkmanager" "wheel" ];
+    extraGroups = [ "networkmanager" "wheel" "input" ];
     packages = with pkgs; [];
   };
 
@@ -69,6 +69,26 @@
   #  vim # Do not forget to add an editor to edit configuration.nix! The Nano editor is also installed by default.
   #  wget
   ];
+
+  programs.hyprland = {
+    enable = true;
+    package = inputs.hyprland.packages.${pkgs.system}.hyprland;
+  };
+
+  fonts.packages = with pkgs; [
+  noto-fonts
+  # noto-fonts-cjk
+  # noto-fonts-emoji
+  source-han-sans
+  source-han-serif
+  # liberation_ttf
+  fira-code
+  fira-code-symbols
+  ];
+
+  # nixpkgs.config.packageOverrides = pkgs: {
+  #  nur = import (builtins.fetchTarball "https://github.com/nix-community/NUR/archive/master.tar.gz") { inherit pkgs; };
+  # };
 
   # Some programs need SUID wrappers, can be configured further or are
   # started in user sessions.

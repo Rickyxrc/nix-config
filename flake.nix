@@ -1,5 +1,5 @@
 {
-  description = "Your new nix config";
+  description = "Ricky's nix config";
 
   inputs = {
     # Nixpkgs
@@ -17,7 +17,17 @@
     # nix-colors.url = "github:misterio77/nix-colors";
 
     # Hyprland config
-    hyprland.url = "github:hyprwm/Hyprland";
+    hyprland = {
+      url = "github:hyprwm/Hyprland";
+      inputs.nixpkgs.follows = "nixpkgs";
+    };
+
+    # Firefox addons
+    # rycee-nurpkgs = {
+    #   url = gitlab:rycee/nur-expressions?dir=pkgs/firefox-addons;
+    #  inputs.nixpkgs.follows = "nixpkgs";
+    #};
+    nur.url = github:nix-community/NUR;
   };
 
   outputs = {
@@ -25,6 +35,7 @@
     nixpkgs,
     home-manager,
     hyprland,
+    nur,
     ...
   } @ inputs: let
     inherit (self) outputs;
@@ -36,7 +47,11 @@
       "ricky-nixos" = nixpkgs.lib.nixosSystem {
         specialArgs = {inherit inputs outputs;};
         # > Our main nixos configuration file <
-        modules = [./nixos/ricky-nixos/configuration.nix];
+        modules = [
+          nur.nixosModules.nur
+        # { nixpkgs.overlays = [ nur.overlay ]; } # overlay
+          ./nixos/ricky-nixos/configuration.nix
+    ];
       };
     };
 
@@ -52,12 +67,12 @@
       };
       "ricky@ricky-nixos" = home-manager.lib.homeManagerConfiguration {
         pkgs = nixpkgs.legacyPackages.x86_64-linux;
-	extraSpecialArgs = {inherit inputs outputs;};
-	modules = [
-      ./home-manager/home.nix
-      hyprland.homeManagerModules.default
-      {wayland.windowManager.hyprland.enable = true;}
-    ];
+        extraSpecialArgs = {inherit inputs outputs;};
+        modules = [
+          ./home-manager/home-gui.nix
+          hyprland.homeManagerModules.default
+          {wayland.windowManager.hyprland.enable = true;}
+        ];
       };
     };
   };

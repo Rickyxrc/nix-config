@@ -69,7 +69,7 @@ unsetopt EXTENDED_HISTORY
 
 # Aliases
 alias edit-config='cd ~/nixos-config && nvim'
-alias update-config='home-manager switch --flake ~/nixos-config#ricky@ricky-wsl-ubuntu'
+alias update-config='home-manager switch --flake ~/nixos-config#ricky@ricky-wsl-ubuntu' --extra-experimental-features nix-command --extra-experimental-features flakes
 
 # Named Directory Hashes
 
