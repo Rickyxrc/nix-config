@@ -1,0 +1,33 @@
+{
+  "layer" : "top",
+  "position" : "top",
+  "width" : 1280,
+  "height" : 32,
+  "modules-left" : [ "cpu", "disk", "memory", "temperature" ],
+  "modules-center" : [ "hyprland/window" ],
+  "modules-right" : [ "clock", "network", "battery" ],
+  "network" : {
+    "format-ethernet" : "n: {ipaddr}/{cidr}",
+    "format-disconnected" : "n: [disconnected]"
+  },
+  "battery" : {
+    "format" : "b: {capacity}%, {time}"
+  },
+  "cpu" : {
+    "format": "c: [{icon0}{icon1}{icon2}{icon3}{icon4}{icon5}{icon6}{icon7}]",
+    "format-icons": ["0","1","2","3","4","5","6","7","8","9"],
+  },
+  "disk" : {
+    "format" : "d: {used}/{total}({percentage_used}%)"
+  },
+  "memory" : {
+    "interval" : 15,
+    "format" : "m: {used:0.1f}G/{total:0.1f}G"
+  },
+  "temperature" : {
+    "format" : "t: {temperatureC} deg"
+  },
+  "clock" : {
+    "format": "t:{:%H:%M}"
+  }
+}
