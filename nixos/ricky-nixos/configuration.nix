@@ -43,6 +43,7 @@
     LC_TIME = "zh_CN.UTF-8";
   };
 
+
   # Configure keymap in X11
   services.xserver = {
     layout = "us";

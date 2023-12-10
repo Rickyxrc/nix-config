@@ -21,13 +21,6 @@
       # maco : notify-daemon
       # exec-once = mako
 
-      # tofi : program launcher
-      # exec-once = tofi
-      bind = $systemMod, R, exec, tofi-drun | xargs hyprctl dispatch exec --
-      bind = $systemMod, F, exec, firefox
-      bind = $systemMod, K, exec, kitty
-      bind = $systemMod, P, exit
-
       # wallpaper
       exec-once = hyprpaper
 
@@ -42,6 +35,12 @@
 
       decoration {
         rounding = 4
+        blur {
+          enabled = true
+          size = 3
+          passes = 1
+          vibrancy = 0.1696
+        }
         # blur = yes
         # blur_size = 5
         # blur_passes = 1
@@ -51,8 +50,12 @@
         # shadow_render_power = 3
         # col.shadow = rgba(1a1a1aee)
       }
+
+      source = ./binds.conf
     '';
   };
+
+  home.file.".config/hypr/binds.conf".source = ./gui/hyprland/binds.conf;
 
   home.file.".config/hypr/hyprpaper.conf".source = ./gui/hyprland/hyprpaper/hyprpaper.conf;
 
@@ -64,5 +67,22 @@
   home.file.".config/waybar" = {
     source = ./gui/hyprland/waybar;
     recursive = true;
+  };
+
+  i18n.inputMethod = {
+    enabled = "fcitx5";
+    fcitx5.addons = with pkgs;[
+      # fcitx5-mozc
+      # fcitx5-gtk
+      fcitx5-rime
+      fcitx5-configtool
+      fcitx5-chinese-addons
+      fcitx5-gtk
+    ];
+    # enabled = "ibus";
+    # ibus.engines = with pkgs.ibus-engines; [
+    #  libpinyin
+    #  rime
+    # ];
   };
 }
