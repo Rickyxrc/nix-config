@@ -16,6 +16,7 @@ in
         ublock-origin
         darkreader
         vimium
+        bitwarden
       ];
     };
   };

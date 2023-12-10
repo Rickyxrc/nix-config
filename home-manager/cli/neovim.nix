@@ -10,14 +10,21 @@
       { plugin = pkgs.vimPlugins.gitsigns-nvim; }
       { plugin = pkgs.vimPlugins.toggleterm-nvim; }
       { plugin = pkgs.vimPlugins.telescope-nvim; }
-      { plugin = pkgs.vimPlugins.coc-nvim; }
-      { plugin = pkgs.vimPlugins.coc-python; }
-      { plugin = pkgs.vimPlugins.coc-lua; }
-      { plugin = pkgs.vimPlugins.coc-json; }
-      { plugin = pkgs.vimPlugins.coc-yaml; }
       { plugin = pkgs.vimPlugins.vim-airline; }
       { plugin = pkgs.vimPlugins.vim-airline-themes; }
       { plugin = pkgs.vimPlugins.nvim-treesitter; }
+      { plugin = pkgs.vimPlugins.everforest; }
+
+      { plugin = pkgs.vimPlugins.coc-nvim; }
+      { plugin = pkgs.vimPlugins.coc-pyright; }
+      { plugin = pkgs.vimPlugins.coc-lua; }
+      { plugin = pkgs.vimPlugins.coc-json; }
+      { plugin = pkgs.vimPlugins.coc-yaml; }
+      # { plugin = pkgs.vimPlugins.coc-astro; }
+      { plugin = pkgs.vimPlugins.coc-markdownlint; }
+      { plugin = pkgs.vimPlugins.coc-html; }
+      { plugin = pkgs.vimPlugins.coc-tsserver; }
+
       # let github_nvim_theme_repo = pkgs.fetchFromGitHub {
       #  owner  = "projekt0n";
       #  repo   = "github-nvim-theme";

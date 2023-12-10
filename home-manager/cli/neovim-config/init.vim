@@ -30,8 +30,8 @@ set autoindent
 
 " Theme
 set termguicolors
-colorscheme github_dark_dimmed
-hi Normal guibg=NONE ctermbg=NONE
+colorscheme everforest
+" hi Normal guibg=NONE ctermbg=NONE
 
 " NERDTree Conf
 " Start NERDTree and leave the cursor in it.
