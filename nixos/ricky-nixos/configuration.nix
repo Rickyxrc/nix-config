@@ -54,7 +54,7 @@
   users.users.ricky = {
     isNormalUser = true;
     description = "ricky";
-    extraGroups = [ "networkmanager" "wheel" "input" ];
+    extraGroups = [ "networkmanager" "wheel" "input" "audio" ];
     packages = with pkgs; [];
   };
 
@@ -63,12 +63,18 @@
 
   # Allow unfree packages
   nixpkgs.config.allowUnfree = true;
+  nixpkgs.config.pulseaudio = true;
+
+  nix.settings.experimental-features = "nix-command flakes";
 
   # List packages installed in system profile. To search, run:
   # $ nix search wget
   environment.systemPackages = with pkgs; [
-  #  vim # Do not forget to add an editor to edit configuration.nix! The Nano editor is also installed by default.
+    vim # Do not forget to add an editor to edit configuration.nix! The Nano editor is also installed by default.
   #  wget
+    pulseaudio
+    pamixer
+    sof-firmware
   ];
 
   programs.hyprland = {
@@ -77,14 +83,20 @@
   };
 
   fonts.packages = with pkgs; [
-  noto-fonts
-  # noto-fonts-cjk
-  # noto-fonts-emoji
-  source-han-sans
-  source-han-serif
-  # liberation_ttf
-  fira-code
-  fira-code-symbols
+      noto-fonts
+      # noto-fonts-cjk
+      noto-fonts-emoji
+      
+      udev-gothic-nf
+
+      source-han-sans
+      source-han-serif
+
+      # liberation_ttf
+      fira-code
+      fira-code-symbols
+
+      nerdfonts
   ];
 
   # nixpkgs.config.packageOverrides = pkgs: {
@@ -103,6 +115,22 @@
 
   # Enable the OpenSSH daemon.
   # services.openssh.enable = true;
+
+  # programs.pulseaudio.enable = true;
+  # programs.pamixer.enable = true;
+  sound.enable = true;
+  hardware = {
+    enableAllFirmware = true;
+    pulseaudio = {
+      enable = true;
+      support32Bit = true;
+      package = pkgs.pulseaudioFull;
+      extraConfig = "load-module module-switch-on-port-available";
+    };
+    bluetooth = {
+      enable = true;
+    };
+  };
 
   # Open ports in the firewall.
   # networking.firewall.allowedTCPPorts = [ ... ];
