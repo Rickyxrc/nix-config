@@ -6,7 +6,7 @@
 
   programs.waybar.enable = true;
   # services.mako.enable = true;
-  home.packages = with pkgs; [ tofi firefox kitty hyprpaper ];
+  home.packages = with pkgs; [ tofi firefox kitty hyprpaper brightnessctl ];
 
   systemd.user.targets.hyprland-session.Unit.Wants = [ "xdg-desktop-autostart.target" ];
   wayland.windowManager.hyprland = {
@@ -16,7 +16,9 @@
       $systemMod = SUPER # operate on window manage
 
       # Monitor
-      monitor = ,highres,auto,auto
+      # monitor = eDP-1,2560x1440@120,auto
+      # monitor = DP-2,1920x1080@60,auto
+
       exec-once = waybar
       # maco : notify-daemon
       # exec-once = mako
@@ -28,9 +30,9 @@
       general {
         gaps_in = 6
         gaps_out = 12
-        border_size = 1
-        col.active_border = rgba(cceeffbb)
-        col.inactive_border = rgba(595959ba)
+        # border_size = 1
+        # col.active_border = rgba(cceeffbb)
+        # col.inactive_border = rgba(595959ba)
       }
 
       decoration {
@@ -51,11 +53,16 @@
         # col.shadow = rgba(1a1a1aee)
       }
 
-      source = ./binds.conf
+      # load workspace conf
+      source = ./workspace.conf
+
+      # load keyboard binds
+      source = ./binds.conf      
     '';
   };
 
   home.file.".config/hypr/binds.conf".source = ./gui/hyprland/binds.conf;
+  home.file.".config/hypr/workspace.conf".source = ./gui/hyprland/workspace.conf;
 
   home.file.".config/hypr/hyprpaper.conf".source = ./gui/hyprland/hyprpaper/hyprpaper.conf;
 
