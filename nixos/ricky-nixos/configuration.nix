@@ -14,7 +14,7 @@
   boot.loader.systemd-boot.enable = true;
   boot.loader.efi.canTouchEfiVariables = true;
 
-  networking.hostName = "ricky-nixos"; # Define your hostname.
+  networking.hostName = "ricky-nixos-mi-laptop"; # Define your hostname.
   # networking.wireless.enable = true;  # Enables wireless support via wpa_supplicant.
 
   # Configure network proxy if necessary
@@ -63,15 +63,12 @@
 
   # Allow unfree packages
   nixpkgs.config.allowUnfree = true;
-  nixpkgs.config.pulseaudio = true;
 
   nix.settings.experimental-features = "nix-command flakes";
 
   # List packages installed in system profile. To search, run:
-  # $ nix search wget
   environment.systemPackages = with pkgs; [
     vim # Do not forget to add an editor to edit configuration.nix! The Nano editor is also installed by default.
-  #  wget
     pulseaudio
     pamixer
     sof-firmware
@@ -84,7 +81,6 @@
 
   fonts.packages = with pkgs; [
       noto-fonts
-      # noto-fonts-cjk
       noto-fonts-emoji
       
       udev-gothic-nf
@@ -92,16 +88,11 @@
       source-han-sans
       source-han-serif
 
-      # liberation_ttf
       fira-code
       fira-code-symbols
 
       nerdfonts
   ];
-
-  # nixpkgs.config.packageOverrides = pkgs: {
-  #  nur = import (builtins.fetchTarball "https://github.com/nix-community/NUR/archive/master.tar.gz") { inherit pkgs; };
-  # };
 
   # Some programs need SUID wrappers, can be configured further or are
   # started in user sessions.
@@ -116,8 +107,7 @@
   # Enable the OpenSSH daemon.
   # services.openssh.enable = true;
 
-  # programs.pulseaudio.enable = true;
-  # programs.pamixer.enable = true;
+  nixpkgs.config.pulseaudio = true;
   sound.enable = true;
   hardware = {
     enableAllFirmware = true;
