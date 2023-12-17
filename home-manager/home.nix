@@ -47,7 +47,7 @@
   };
 
   # Add stuff for your user as you see fit:
-  home.packages = with pkgs; [ tree neofetch nodejs yarn gcc v2raya ];
+  home.packages = with pkgs; [ tree neofetch nodejs yarn gcc v2raya ripgrep fd ];
 
   # Enable home-manager
   programs.home-manager.enable = true;
