@@ -34,9 +34,14 @@
       "ricky-nixos-mi-laptop" = nixpkgs.lib.nixosSystem {
         specialArgs = {inherit inputs outputs;};
         modules = [
-          # nur.nixosModules.nur
-          ./nixos/ricky-nixos/configuration.nix
+            ./nixos/ricky-nixos-mi-laptop/configuration.nix
     ];
+      };
+      "ricky-nixos-xjcw-virtual-machine" = nixpkgs.lib.nixosSystem {
+        specialArgs = {inherit inputs outputs;};
+        modules = [
+            # Will be updated when I got 'configuration.nix'
+        ]
       };
     };
 
@@ -50,6 +55,13 @@
           ./home-manager/home-gui.nix
           hyprland.homeManagerModules.default
           {wayland.windowManager.hyprland.enable = true;}
+        ];
+      };
+      "ricky@ricky-nixos-xjcw-virtual-machine" = home-manager.lib.homeManagerConfiguration {
+        pkgs = nixpkgs.legacyPackages.x86_64-linux;
+        extraSpecialArgs = {inherit inputs outputs;};
+        modules = [
+          ./home-manager/home.nix
         ];
       };
     };
