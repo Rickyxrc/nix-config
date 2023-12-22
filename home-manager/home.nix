@@ -17,6 +17,7 @@
     ./cli/zsh.nix
     ./cli/neovim.nix
     ./cli/git.nix
+    ./cli/tmux.nix
   ];
 
   nixpkgs = {
@@ -32,6 +33,7 @@
       #   });
       # })
     ];
+
     # Configure your nixpkgs instance
     config = {
       # Disable if you don't want unfree packages
@@ -47,7 +49,7 @@
   };
 
   # Add stuff for your user as you see fit:
-  home.packages = with pkgs; [ tree neofetch nodejs yarn gcc v2raya ripgrep fd ];
+  home.packages = with pkgs; [ tree neofetch nodejs yarn gcc v2raya ripgrep fd lazygit ];
 
   # Enable home-manager
   programs.home-manager.enable = true;

@@ -43,18 +43,28 @@ autocmd BufEnter * if tabpagenr('$') == 1 && winnr('$') == 1 && exists('b:NERDTr
 
 " Treesitter highlight
 " lua require("modules.treesitter")
-lua require'nvim-treesitter.configs'.setup {}
+lua require('nvim-treesitter.configs').setup {}
 
 " Gitsigns
 " lua require("modules.gitsigns")
 lua require("gitsigns").setup()
 
 " ToggleTerm
-lua require("toggleterm").setup()
-
-noremap <F5> :ToggleTerm size=12 direction=horizontal name=desktop<CR>
-tmap <Esc> <C-\><C-n>
+" Don't use ToggleTerm now, use tmux
+" lua require("toggleterm").setup()
+" noremap <F5> :ToggleTerm size=12 direction=horizontal name=desktop<CR>
+" tmap <Esc> <C-\><C-n>
 
 " Telescope
 lua require('telescope').setup()
 noremap <F8> :Telescope find_files<CR>
+
+" Set leader key
+let mapleader = " "
+
+" Switch window
+noremap <Leader>h <C-w>h
+noremap <Leader>j <C-w>j
+noremap <Leader>k <C-w>k
+noremap <Leader>l <C-w>l
+

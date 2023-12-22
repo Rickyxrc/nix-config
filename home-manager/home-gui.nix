@@ -1,21 +1,16 @@
 {inputs, lib, config, pkgs, hyprland, ...} : {
   imports = [
-    ./home.nix
-    ./gui/firefox.nix
+    ./home.nix        # Basic environments
+    ./gui/firefox.nix # Browser 
+    ./gui/kitty.nix   # Terminal emulator
   ];
 
-
   home.packages = with pkgs; [
-    tofi             # Application Launcher
-    firefox          # Browser
-    kitty            # Terminal
-    hyprpaper        # Background
-    brightnessctl    # Display brightness
-    discord          # Chat
-    wl-clipboard     # Clipboard
-    grim             #
-    slurp            #
-    swappy           # Screenshot
+    tofi              # Application Launcher
+    hyprpaper         # Background
+    brightnessctl     # Display brightness
+    discord           # Chat
+    wl-clipboard      # Clipboard
   ];
 
   systemd.user.targets.hyprland-session.Unit.Wants = [ "xdg-desktop-autostart.target" ];
