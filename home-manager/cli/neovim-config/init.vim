@@ -68,3 +68,6 @@ noremap <Leader>j <C-w>j
 noremap <Leader>k <C-w>k
 noremap <Leader>l <C-w>l
 
+noremap <Leader>- :sp<Enter>
+noremap <Leader>\ :vsp<Enter>
+
