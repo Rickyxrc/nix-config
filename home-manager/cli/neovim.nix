@@ -1,8 +1,7 @@
-{ pkgs, ... } :
-{
+{ pkgs, ... } : {
   programs.neovim = {
     enable = true;
-    # defaultEditor = true;
+    defaultEditor = true;
     viAlias = true;
     vimAlias = true;
     plugins = [
@@ -20,11 +19,9 @@
       { plugin = pkgs.vimPlugins.coc-lua; }
       { plugin = pkgs.vimPlugins.coc-json; }
       { plugin = pkgs.vimPlugins.coc-yaml; }
-      # { plugin = pkgs.vimPlugins.coc-astro; }
       { plugin = pkgs.vimPlugins.coc-markdownlint; }
       { plugin = pkgs.vimPlugins.coc-html; }
       { plugin = pkgs.vimPlugins.coc-tsserver; }
-
       # let github_nvim_theme_repo = pkgs.fetchFromGitHub {
       #  owner  = "projekt0n";
       #  repo   = "github-nvim-theme";
@@ -34,5 +31,6 @@
       #}; in import "${github_nvim_theme_repo}/release.nix"
     ];
   };
+
   home.file.".config/nvim/init.vim".source = ./neovim-config/init.vim;
 }
