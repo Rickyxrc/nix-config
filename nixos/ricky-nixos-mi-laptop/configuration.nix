@@ -65,6 +65,13 @@
   nixpkgs.config.allowUnfree = true;
 
   nix.settings.experimental-features = "nix-command flakes";
+  nix.settings.trusted-users = [ "ricky" ];
+  # nix.settings.substituters = [
+  #   "https://nix-community.cachix.org"
+  # ];
+  # nix.settings.trusted-public-keys = [
+  #   "nix-community.cachix.org-1:mB9FSh9qf2dCimDSUo8Zy7bkq5CX+/rkCWyvRCYg3Fs="
+  # ];
 
   # List packages installed in system profile. To search, run:
   environment.systemPackages = with pkgs; [
