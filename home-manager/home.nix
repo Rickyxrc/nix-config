@@ -13,8 +13,8 @@
     # inputs.nix-colors.homeManagerModule
 
     # You can also split up your configuration and import pieces of it here:
-    # ./nvim.nix
-    ./cli/zsh.nix
+    # inputs.nur.hmModules.nur
+    # ./cli/zsh.nix
     ./cli/neovim.nix
     ./cli/git.nix
     ./cli/tmux.nix
@@ -23,6 +23,7 @@
   nixpkgs = {
     # You can add overlays here
     overlays = [
+      inputs.nur.overlay
       # If you want to use overlays exported from other flakes:
       # neovim-nightly-overlay.overlays.default
 
