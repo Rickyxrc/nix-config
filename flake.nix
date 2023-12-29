@@ -3,15 +3,17 @@
 
   inputs = {
     # Nixpkgs
-    nixpkgs.url = "github:nixos/nixpkgs/nixos-23.11";
+    nixpkgs.url = github:nixos/nixpkgs/nixos-23.11;
 
     # Home manager
-    home-manager.url = "github:nix-community/home-manager/release-23.11";
-    home-manager.inputs.nixpkgs.follows = "nixpkgs";
+    home-manager = {
+        url = github:nix-community/home-manager/release-23.11;
+        inputs.nixpkgs.follows = "nixpkgs";
+    };
 
     # Hyprland config
     hyprland = {
-      url = "github:hyprwm/Hyprland";
+      url = github:hyprwm/Hyprland;
       inputs.nixpkgs.follows = "nixpkgs";
     };
 
