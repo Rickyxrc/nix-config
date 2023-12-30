@@ -17,9 +17,7 @@ Upcoming support:
 ## To do
 
 - Tex environment build
-- Sound support for `ricky@ricky-nixos-mi-laptop`
 - Hyprland autolaunch and welcome shell
 - Screenshot program
-- Clipboard support
 - Music player and other common-used software
 
