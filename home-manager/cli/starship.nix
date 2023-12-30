@@ -2,10 +2,12 @@
     programs.starship = {
         enable = true;
         settings = {
+            add_newline = true;
             format = ''
-                $directory#
+                $all
             '';
         };
     };
     home.file.".bashrc".source = ./starship-config/bashrc;
+    home.file.".bash_profile".source = ./starship-config/bashrc;
 }
