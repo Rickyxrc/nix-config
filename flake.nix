@@ -18,6 +18,8 @@
     };
 
     nur.url = github:nix-community/NUR;
+
+    cf-tool.url = github:rickyxrc/cf-tool;
   };
 
   outputs = {
@@ -26,6 +28,7 @@
     home-manager,
     hyprland,
     nur,
+    cf-tool,
     ...
   } @ inputs: let
     inherit (self) outputs;

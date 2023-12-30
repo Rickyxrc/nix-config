@@ -18,6 +18,7 @@
     ./cli/neovim.nix
     ./cli/git.nix
     ./cli/tmux.nix
+    ./cli/starship.nix
   ];
 
   nixpkgs = {
@@ -50,7 +51,8 @@
   };
 
   # Add stuff for your user as you see fit:
-  home.packages = with pkgs; [ tree neofetch nodejs yarn gcc v2raya ripgrep fd lazygit ];
+  home.packages = with pkgs; [ tree neofetch nodejs yarn gcc v2raya ripgrep fd lazygit ] 
+    ++ [ inputs.cf-tool.packages.${pkgs.system}.default ];
 
   # Enable home-manager
   programs.home-manager.enable = true;
