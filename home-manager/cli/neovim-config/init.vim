@@ -7,6 +7,9 @@ syntax on
 " Disable mouse
 set mouse = 
 
+" Set leader key
+let mapleader = " "
+
 " Set tab sace
 set ts=4
 set softtabstop=4
@@ -14,24 +17,9 @@ set shiftwidth=4
 set expandtab
 set autoindent
 
-" Plugins
-" call plug#begin("~/.config/nvim/plugged")
-"    Plug 'projekt0n/github-nvim-theme'
-"    Plug 'vim-airline/vim-airline'
-"    Plug 'vim-airline/vim-airline-themes'
-"    Plug 'preservim/nerdtree'
-"    Plug 'nvim-treesitter/nvim-treesitter', {'do': ':TSUpdate'}
-"    Plug 'neoclide/coc.nvim', {'branch': 'release'}
-"    Plug 'lewis6991/gitsigns.nvim'
-"    Plug 'akinsho/toggleterm.nvim', {'tag' : '*'}
-"    Plug 'nvim-lua/plenary.nvim'
-"    Plug 'nvim-telescope/telescope.nvim', { 'tag': '0.1.4' }
-"call plug#end()
-
 " Theme
 set termguicolors
 colorscheme everforest
-" hi Normal guibg=NONE ctermbg=NONE
 
 " NERDTree Conf
 " Start NERDTree and leave the cursor in it.
@@ -42,25 +30,18 @@ autocmd VimEnter * NERDTree | wincmd p
 autocmd BufEnter * if tabpagenr('$') == 1 && winnr('$') == 1 && exists('b:NERDTree') && b:NERDTree.isTabTree() | quit | endif
 
 " Treesitter highlight
-" lua require("modules.treesitter")
 lua require('nvim-treesitter.configs').setup {}
 
 " Gitsigns
 " lua require("modules.gitsigns")
 lua require("gitsigns").setup()
 
-" ToggleTerm
-" Don't use ToggleTerm now, use tmux
-" lua require("toggleterm").setup()
-" noremap <F5> :ToggleTerm size=12 direction=horizontal name=desktop<CR>
-" tmap <Esc> <C-\><C-n>
-
 " Telescope
 lua require('telescope').setup()
-noremap <F8> :Telescope find_files<CR>
-
-" Set leader key
-let mapleader = " "
+noremap <Leader>fd :Telescope find_files<CR>
+noremap <Leader>df :Telescope find_files<CR>
+noremap <Leader>fg :Telescope live_grep<CR>
+noremap <Leader>gf :Telescope live_grep<CR>
 
 " Switch window
 noremap <Leader>h <C-w>h
@@ -68,6 +49,10 @@ noremap <Leader>j <C-w>j
 noremap <Leader>k <C-w>k
 noremap <Leader>l <C-w>l
 
+" Split window
 noremap <Leader>- :sp<Enter>
 noremap <Leader>\ :vsp<Enter>
+
+" Paste
+noremap <Leader>p :r!wl-paste<CR>
 
