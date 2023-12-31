@@ -13,6 +13,7 @@
         ./cli/tmux
         ./cli/starship
         ./cli/bash
+        ./cli/cf-tool
     ];
 
     nixpkgs = {
@@ -43,8 +44,7 @@
         fd          # Advanced command for 'find', required by vimPlugins.Telescope-nvim.
         lazygit     # Terminal UI for git.
         go-musicfox # Netease music player in terminal.
-    ]
-    ++ [ inputs.cf-tool.packages.${pkgs.system}.default ]; # flake cf-tool packaged by rickyxrc
+    ];
 
     # Enable home-manager
     programs.home-manager.enable = true;
