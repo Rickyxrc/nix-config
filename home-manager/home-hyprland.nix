@@ -4,7 +4,7 @@
     ];
 
     home.packages = with pkgs; [
-        tofi           # Application Launcher
+        rofi-wayland   # Application Launcher
         hyprpaper      # Background
         brightnessctl  # Display brightness
         wl-clipboard   # Clipboard

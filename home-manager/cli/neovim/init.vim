@@ -43,6 +43,11 @@ noremap <Leader>df :Telescope find_files<CR>
 noremap <Leader>fg :Telescope live_grep<CR>
 noremap <Leader>gf :Telescope live_grep<CR>
 
+" No need to press shift for enter command any more!
+noremap ; :
+inoremap jf <Esc>
+inoremap fj <Esc>
+
 " Switch window
 noremap <Leader>h <C-w>h
 noremap <Leader>j <C-w>j
