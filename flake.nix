@@ -42,12 +42,6 @@
           ./nixos/ricky-nixos-mi-laptop/configuration.nix
         ];
       };
-      "ricky-nixos-xjcw-virtual-machine" = nixpkgs.lib.nixosSystem {
-        specialArgs = {inherit inputs outputs;};
-        modules = [
-            # Will be updated when I got 'configuration.nix'
-        ];
-      };
     };
 
     # Standalone home-manager configuration entrypoint
@@ -57,15 +51,15 @@
         pkgs = nixpkgs.legacyPackages.x86_64-linux;
         extraSpecialArgs = {inherit inputs outputs;};
         modules = [
-          ./home-manager/home-gui.nix
           hyprland.homeManagerModules.default
+          ./home-manager/home-hyprland.nix
         ];
       };
-      "ricky@ricky-nixos-xjcw-virtual-machine" = home-manager.lib.homeManagerConfiguration {
+      "ricky@ricky-ubuntu-xjcw-virtual-machine" = home-manager.lib.homeManagerConfiguration {
         pkgs = nixpkgs.legacyPackages.x86_64-linux;
         extraSpecialArgs = {inherit inputs outputs;};
         modules = [
-          ./home-manager/home.nix
+          ./home-manager/home-gui.nix
         ];
       };
     };
