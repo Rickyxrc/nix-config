@@ -32,5 +32,5 @@
     ];
   };
 
-  home.file.".config/nvim/init.vim".source = ./neovim-config/init.vim;
+  home.file.".config/nvim/init.vim".source = ./init.vim;
 }
