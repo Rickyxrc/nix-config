@@ -44,6 +44,8 @@
         fd          # Advanced command for 'find', required by vimPlugins.Telescope-nvim.
         lazygit     # Terminal UI for git.
         go-musicfox # Netease music player in terminal.
+        playerctl   # Command line tool for media.
+        htop        # Process monitor in TUI
     ];
 
     # Enable home-manager
