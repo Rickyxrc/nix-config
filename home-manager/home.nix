@@ -14,6 +14,7 @@
         ./cli/starship
         ./cli/bash
         ./cli/cf-tool
+        ./cli/atcodercli
     ];
 
     nixpkgs = {
