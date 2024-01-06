@@ -6,7 +6,7 @@
     "passthrough": false,
     "gtk-layer-shell": true,
     "height": 30,
-    "modules-left": [ "clock", "hyprland/window" ],
+    "modules-left": [ "clock", "custom/nowplaying" ],
     //"modules-left": ["clock","hyprland/window"],
     "modules-center": [ "hyprland/workspaces" ],
     "modules-right": [ "temperature", "battery", "network", "backlight", "pulseaudio", "bluetooth" ],
@@ -140,5 +140,11 @@
 	    "tooltip-format": "{device_alias}",
 	    "tooltip-format-connected": " {device_enumerate}",
 	    "tooltip-format-enumerate-connected": "{device_alias}"
+    },
+    
+    "custom/nowplaying": {
+        "format": "{}",
+        "exec" : "playerctl metadata --format \"playing: {{artist}} / {{title}}\"",
+        "restart-interval": 5
     }
 }

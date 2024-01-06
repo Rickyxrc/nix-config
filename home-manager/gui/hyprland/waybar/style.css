@@ -61,13 +61,18 @@ tooltip {
 #temperature,
 #workspaces,
 #tray,
-#backlight {
+#backlight,
+#custom-nowplaying {
     background: #1e1e2e;
     opacity: 0.8;
     padding: 0px 10px;
     margin: 0;
     margin-top: 5px;
     border: 1px solid #181825;
+}
+
+#custom-nowplaying {
+    border-radius: 0px 20px 20px 0px;
 }
 
 #temperature {
@@ -111,7 +116,7 @@ tooltip {
 
 #clock {
     color: #fab387;
-    border-radius: 20px;
+    border-radius: 20px 0px 0px 20px;
     margin-left: 10px;
     border-right: 0px;
     transition: 0.3s;
