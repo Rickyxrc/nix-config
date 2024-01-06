@@ -144,7 +144,7 @@
     
     "custom/nowplaying": {
         "format": "{}",
-        "exec" : "playerctl metadata --format \"playing: {{artist}} / {{title}}\"",
+        "exec" : "sh ~/.config/waybar/nowplaying.sh",
         "restart-interval": 5
     }
 }
