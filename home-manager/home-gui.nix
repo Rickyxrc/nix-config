@@ -7,5 +7,6 @@
 
     home.packages = with pkgs; [
         discord # Chat Tool
+        neovide # neovim animated
     ];
 }

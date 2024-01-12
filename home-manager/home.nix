@@ -15,6 +15,7 @@
         ./cli/bash
         ./cli/cf-tool
         ./cli/atcodercli
+        ./cli/zsh
     ];
 
     nixpkgs = {
