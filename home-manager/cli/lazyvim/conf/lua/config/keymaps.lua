@@ -3,7 +3,4 @@
 -- Add any additional keymaps here
 
 local map = vim.keymap.set
-map("n", ";", ":", {noremap = true, silent = true, desc="remap command"})
-map("n", "]t", "<cmd>tabnext<CR>", {noremap = true, silent = true, desc="Next Tab"})
-map("n", "[t", "<cmd>tabprevious<CR>", {noremap = true, silent = true, desc="Previous Tab"})
 

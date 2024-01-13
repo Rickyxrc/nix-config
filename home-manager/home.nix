@@ -2,8 +2,6 @@
 # Use this to configure your home environment (it replaces ~/.config/nixpkgs/home.nix)
 {
   inputs,
-  lib,
-  config,
   pkgs,
   ...
 }: {
@@ -43,12 +41,11 @@
         nodejs      # required by vimPlugins.coc-nvim
         gcc         # idk why install it globally.
         v2raya      # Everyone knows why chinese developers need it.
-        ripgrep     # Advanced command for 'grep', required by vimPlugins.Telescope-nvim.
-        fd          # Advanced command for 'find', required by vimPlugins.Telescope-nvim.
         lazygit     # Terminal UI for git.
         go-musicfox # Netease music player in terminal.
         playerctl   # Command line tool for media.
         htop        # Process monitor in TUI
+        unzip       # I dont have this until I add this line lol
     ];
 
     # Enable home-manager
