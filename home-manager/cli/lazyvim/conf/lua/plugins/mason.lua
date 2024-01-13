@@ -9,7 +9,6 @@ return {
       "pylint",
       "shfmt",
       "deno",
-      "texlab"
     },
   },
 }
