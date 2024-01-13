@@ -8,7 +8,8 @@
   ...
 }: {
     imports = [
-        ./cli/neovim
+        # ./cli/neovim
+        ./cli/lazyvim
         ./cli/git
         ./cli/tmux
         ./cli/starship
