@@ -20,7 +20,7 @@
     nur.url = github:nix-community/NUR;
 
     cf-tool.url = github:rickyxrc/cf-tool;
-    atcodercli.url = github:rickyxrc/at-cli/tags/v0.1.1;
+    atcodercli.url = github:rickyxrc/at-cli/tags/v0.1.3;
   };
 
   outputs = {
