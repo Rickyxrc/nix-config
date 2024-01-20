@@ -7,7 +7,8 @@
 {
   imports =
     [ # Include the results of the hardware scan.
-        /etc/nixos/hardware-configuration.nix
+        # /etc/nixos/hardware-configuration.nix
+        ./hardware-configuration.nix
     ];
 
   # Bootloader.
@@ -51,7 +52,8 @@
     extraGroups = [ "networkmanager" "wheel" "input" "audio" ];
     packages = [];
   };
-  users.defaultUserShell = pkgs.zsh;
+  users.users.ricky.shell = pkgs.zsh;
+  users.users.ricky.ignoreShellProgramCheck = true;
 
   # Enable automatic login for the user.
   services.getty.autologinUser = "ricky";
@@ -98,10 +100,7 @@
       enable = true;
       support32Bit = true;
       package = pkgs.pulseaudioFull;
-      extraConfig = """
-        load-module module-switch-on-port-available
-        load-module module-switch-on-connect
-      """;
+      extraConfig = "load-module module-switch-on-port-available";
     };
     bluetooth = {
       enable = true;
