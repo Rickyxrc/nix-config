@@ -21,6 +21,7 @@
 
     cf-tool.url = github:rickyxrc/cf-tool;
     atcodercli.url = github:rickyxrc/at-cli/tags/v0.1.4;
+    nix-gaming.url = github:fufexan/nix-gaming;
   };
 
   outputs = {

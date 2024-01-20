@@ -80,8 +80,8 @@
   fonts.packages = with pkgs; [
       noto-fonts
       noto-fonts-emoji
-      
-      udev-gothic-nf
+
+      # udev-gothic-nf
 
       source-han-sans
       source-han-serif
