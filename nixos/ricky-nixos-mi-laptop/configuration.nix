@@ -2,7 +2,7 @@
 # your system.  Help is available in the configuration.nix(5) man page
 # and in the NixOS manual (accessible by running ‘nixos-help’).
 
-{ inputs, config, pkgs, ... }:
+{ inputs, pkgs, ... }:
 
 {
   imports =
@@ -49,7 +49,7 @@
     isNormalUser = true;
     description = "ricky";
     extraGroups = [ "networkmanager" "wheel" "input" "audio" ];
-    packages = with pkgs; [];
+    packages = [];
   };
 
   # Enable automatic login for the user.
@@ -97,7 +97,10 @@
       enable = true;
       support32Bit = true;
       package = pkgs.pulseaudioFull;
-      extraConfig = "load-module module-switch-on-port-available";
+      extraConfig = """
+        load-module module-switch-on-port-available
+        load-module module-switch-on-connect
+      """;
     };
     bluetooth = {
       enable = true;
