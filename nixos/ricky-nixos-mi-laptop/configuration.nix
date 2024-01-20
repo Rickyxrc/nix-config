@@ -51,6 +51,7 @@
     extraGroups = [ "networkmanager" "wheel" "input" "audio" ];
     packages = [];
   };
+  users.defaultUserShell = pkgs.zsh;
 
   # Enable automatic login for the user.
   services.getty.autologinUser = "ricky";
