@@ -8,7 +8,7 @@ return {
       "pylint",
       "shfmt",
       "deno",
-      "ast-grep"
+      "json-lsp",
     },
   },
 }

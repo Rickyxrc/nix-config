@@ -9,5 +9,6 @@
         cargo       # required by some lsp servers
         ripgrep     # Advanced command for 'grep', required by vimPlugins.Telescope-nvim.
         fd          # Advanced command for 'find', required by vimPlugins.Telescope-nvim.
+        tree-sitter # required by treesitter
     ];
 }

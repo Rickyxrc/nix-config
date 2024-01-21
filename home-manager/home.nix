@@ -46,6 +46,7 @@
         playerctl   # Command line tool for media.
         htop        # Process monitor in TUI
         unzip       # I dont have this until I add this line lol
+        wget        # LOL too
         asciinema   # Terminal Recorder
     ];
 
