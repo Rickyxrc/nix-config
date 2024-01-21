@@ -3,25 +3,24 @@
 
   inputs = {
     # Nixpkgs
-    nixpkgs.url = github:nixos/nixpkgs/nixos-23.11;
+    nixpkgs.url = "github:nixos/nixpkgs/nixos-23.11";
 
     # Home manager
     home-manager = {
-        url = github:nix-community/home-manager/release-23.11;
+        url = "github:nix-community/home-manager/release-23.11";
         inputs.nixpkgs.follows = "nixpkgs";
     };
 
     # Hyprland config
     hyprland = {
-      url = github:hyprwm/Hyprland;
+      url = "github:hyprwm/Hyprland";
       inputs.nixpkgs.follows = "nixpkgs";
     };
 
-    nur.url = github:nix-community/NUR;
-
-    cf-tool.url = github:rickyxrc/cf-tool;
-    atcodercli.url = github:rickyxrc/at-cli/tags/v0.3.3;
-    nix-gaming.url = github:fufexan/nix-gaming;
+    nur.url = "github:nix-community/NUR";
+    cf-tool.url = "github:rickyxrc/cf-tool";
+    atcodercli.url = "github:rickyxrc/at-cli/tags/v0.3.3";
+    nix-gaming.url = "github:fufexan/nix-gaming";
   };
 
   outputs = {
