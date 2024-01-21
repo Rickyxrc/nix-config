@@ -15,6 +15,7 @@
         ./cli/cf-tool
         ./cli/atcodercli
         ./cli/zsh
+        ./cli/direnv
     ];
 
     nixpkgs = {
@@ -48,6 +49,7 @@
         unzip       # I dont have this until I add this line lol
         wget        # LOL too
         asciinema   # Terminal Recorder
+        crowdin-cli # Crowdin cli
     ];
 
     # Enable home-manager

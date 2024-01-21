@@ -11,6 +11,7 @@
         paprefs     # controls audio output
         pavucontrol # controls audio output
         wineWowPackages.stable # wine
+        # steam       # Everyone knows
     ] ++ [
         inputs.nix-gaming.packages.${pkgs.system}.osu-lazer-bin
         # inputs.nix-gaming.packages.${pkgs.system}.wine-tkg
