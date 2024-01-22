@@ -1,4 +1,4 @@
-{ pkgs, lib, ... } :
+{ lib, ... } :
 {
     programs.kitty = {
         enable = true;
@@ -6,5 +6,7 @@
     };
 
     home.file.".config/kitty/everforest.conf".source = ./everforest.conf;
+    home.file.".config/kitty/tokyonight.conf".source = ./tokyonight.conf;
+    home.file.".config/kitty/afterglow.conf".source = ./afterglow.conf;
 }
 
