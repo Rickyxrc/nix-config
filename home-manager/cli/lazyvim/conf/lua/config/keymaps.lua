@@ -29,4 +29,5 @@ unmap("n", "<C-/>")
 map("n", "<leader>tt", "<cmd>ToggleTerm dir=. direction=float name=floating<cr>", {noremap = true, silent = true, desc = "ToggleTerm Float"})
 map("n", "<leader>gg", "<cmd>lua _lazygit_toggle()<cr>", {noremap = true, silent = true, desc = "Lazygit"})
 map("n", "<leader>tm", "<cmd>lua _musicfox_toggle()<cr>", {noremap = true, silent = true, desc = "Musicfox (tmux)"})
+map("t", "<C-Esc>", "<C-\\><C-n><cmd>ToggleTerm<cr>")
 
