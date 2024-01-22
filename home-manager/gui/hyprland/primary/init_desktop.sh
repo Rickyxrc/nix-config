@@ -3,7 +3,7 @@ tmux kill-session -t daemon
 tmux kill-session -t proxy
 tmux kill-session -t musicfox
 
-export INTERVAL=0.1
+export INTERVAL=0.8
 
 # Music
 tmux new-session -d -s musicfox -n musicfox -d "musicfox"
@@ -33,28 +33,28 @@ sleep $INTERVAL
 discord &
 sleep $INTERVAL
 
-hyprctl dispatch workspace 3
-sleep $INTERVAL
+# hyprctl dispatch workspace 3
+# sleep $INTERVAL
 
-hyprctl dispatch workspace 4
-sleep $INTERVAL
+# hyprctl dispatch workspace 4
+# sleep $INTERVAL
 
-hyprctl dispatch workspace 5
-sleep $INTERVAL
+# hyprctl dispatch workspace 5
+# sleep $INTERVAL
 
 hyprctl dispatch workspace 6
 sleep $INTERVAL
 firefox &
 sleep $INTERVAL
 
-hyprctl dispatch workspace 7
-sleep $INTERVAL
+# hyprctl dispatch workspace 7
+# sleep $INTERVAL
 
-hyprctl dispatch workspace 8
-sleep $INTERVAL
+# hyprctl dispatch workspace 8
+# sleep $INTERVAL
 
-hyprctl dispatch workspace 9
-sleep $INTERVAL
+# hyprctl dispatch workspace 9
+# sleep $INTERVAL
 
 hyprctl dispatch workspace 6
 sleep $INTERVAL
