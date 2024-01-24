@@ -19,7 +19,7 @@
 
     nur.url = "github:nix-community/NUR";
     cf-tool.url = "github:rickyxrc/cf-tool";
-    atcodercli.url = "github:rickyxrc/at-cli/tags/v0.3.3";
+    atcodercli.url = "github:rickyxrc/at-cli/tags/v0.3.10";
     nix-gaming.url = "github:fufexan/nix-gaming";
   };
 
