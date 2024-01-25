@@ -6,16 +6,16 @@
         "poetry2nix": "poetry2nix"
       },
       "locked": {
-        "lastModified": 1706192916,
-        "narHash": "sha256-PgWZ6WZtEmYEIfH5GuC00Pl56rnGYNuK1tQZlEikgGM=",
+        "lastModified": 1706206640,
+        "narHash": "sha256-KJD2/dTdilpGBbwNx8S0qYBZ5yb2tACU8JIPoPAe+jc=",
         "owner": "rickyxrc",
         "repo": "at-cli",
-        "rev": "97bd35e8f0f5fbdcd96f6d6a3a7ce2754f3e76cc",
+        "rev": "2a6140d96cab6c217776d43f1f80a85de6c4ec62",
         "type": "github"
       },
       "original": {
         "owner": "rickyxrc",
-        "ref": "tags/v0.4.1",
+        "ref": "tags/v0.5.1",
         "repo": "at-cli",
         "type": "github"
       }
