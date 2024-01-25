@@ -19,8 +19,9 @@
 
     nur.url = "github:nix-community/NUR";
     cf-tool.url = "github:rickyxrc/cf-tool";
-    atcodercli.url = "github:rickyxrc/at-cli/tags/v0.3.10";
+    atcodercli.url = "github:rickyxrc/at-cli/tags/v0.3.11";
     nix-gaming.url = "github:fufexan/nix-gaming";
+    pylauncher.url = "github:rickyxrc/pylauncher";
   };
 
   outputs = {

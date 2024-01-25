@@ -23,7 +23,8 @@ tmux new-session -d -s proxy -d "sudo v2rayA"
 
 hyprctl dispatch workspace 1
 sleep $INTERVAL
-neovide &
+kitty tmux pylauncher
+# neovide & # need environment, so replaced
 sleep $INTERVAL
 kitty tmux attach-session -t proxy & # prompt for password, so focus on this
 sleep $INTERVAL

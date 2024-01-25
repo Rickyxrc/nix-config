@@ -1,0 +1,7 @@
+[Desktop Entry]
+Name=pylauncher
+Exec=pylauncher
+Type=Application
+StartupNotify=true
+Path=/home/ricky/
+
