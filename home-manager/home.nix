@@ -50,6 +50,7 @@
         wget        # LOL too
         asciinema   # Terminal Recorder
         crowdin-cli # Crowdin cli
+        yazi        # File Manager
     ];
 
     # Enable home-manager
