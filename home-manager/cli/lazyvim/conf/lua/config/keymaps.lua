@@ -31,3 +31,6 @@ map("n", "<leader>gg", "<cmd>lua _lazygit_toggle()<cr>", {noremap = true, silent
 map("n", "<leader>tm", "<cmd>lua _musicfox_toggle()<cr>", {noremap = true, silent = true, desc = "Musicfox (tmux)"})
 map("t", "<C-Esc>", "<C-\\><C-n><cmd>ToggleTerm<cr>")
 
+-- other
+unmap("n", "<C-s>") --save file
+
