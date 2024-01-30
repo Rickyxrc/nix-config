@@ -15,6 +15,7 @@
         grim        # Screen shot
         steam       # Everyone knows
         musescore   # Midi file editor
+        hmcl        # Minecraft launcher
     ] ++ [
         inputs.nix-gaming.packages.${pkgs.system}.osu-lazer-bin
         # inputs.nix-gaming.packages.${pkgs.system}.wine-tkg

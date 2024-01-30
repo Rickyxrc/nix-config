@@ -51,6 +51,7 @@
         asciinema   # Terminal Recorder
         crowdin-cli # Crowdin cli
         yazi        # File Manager
+        pamixer     # control volume
     ];
 
     # Enable home-manager
