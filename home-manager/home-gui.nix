@@ -13,7 +13,8 @@
         pavucontrol # controls audio output
         wineWowPackages.stable # wine
         grim        # Screen shot
-        # steam       # Everyone knows
+        steam       # Everyone knows
+        musescore   # Midi file editor
     ] ++ [
         inputs.nix-gaming.packages.${pkgs.system}.osu-lazer-bin
         # inputs.nix-gaming.packages.${pkgs.system}.wine-tkg
