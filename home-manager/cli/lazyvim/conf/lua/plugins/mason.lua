@@ -9,6 +9,7 @@ return {
       "shfmt",
       "deno",
       "json-lsp",
+      "omnisharp",
     },
   },
 }

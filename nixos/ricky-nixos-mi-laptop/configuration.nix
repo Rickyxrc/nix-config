@@ -104,6 +104,10 @@
     bluetooth = {
       enable = true;
     };
+    opengl = {
+      driSupport32Bit = true;
+      enable = true;
+    };
   };
 
   # This value determines the NixOS release from which the default
