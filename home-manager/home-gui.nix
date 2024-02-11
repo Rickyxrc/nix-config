@@ -19,6 +19,7 @@
         hmcl        # Minecraft launcher
         obs-studio  # Useful software
         notify-desktop # send notify
+        # virtualbox  # VM
     ] ++ [
         inputs.nix-gaming.packages.${pkgs.system}.osu-lazer-bin
         # inputs.nix-gaming.packages.${pkgs.system}.wine-tkg

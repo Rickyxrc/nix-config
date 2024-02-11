@@ -52,6 +52,8 @@
         crowdin-cli # Crowdin cli
         yazi        # File Manager
         pamixer     # control volume
+        gh          # Github cli
+        rclone      # Sync data across cloud drives
     ];
 
     # Enable home-manager
