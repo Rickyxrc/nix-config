@@ -13,6 +13,9 @@
                 Hyprland;
             fi
 
+            # set env vars
+            export EDITOR=vim
+
             # Other package generated hook
         '';
     };

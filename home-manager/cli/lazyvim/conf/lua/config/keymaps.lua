@@ -13,7 +13,8 @@ unmap("n", "<leader>`")
 
 -- Terminal
 local Terminal = require('toggleterm.terminal').Terminal
-local lazygit = Terminal:new({ cmd = "lazygit", hidden = true, direction = "float", dir = "." })
+local tmux = Terminal:new({ cmd = "tmux", hidden = true, direction = "float", dir = "."})
+local lazygit = Terminal:new({ cmd = "lazygit", hidden = true, direction = "float", dir = "."})
 local musicfox = Terminal:new({ cmd = "tmux attach-session -t musicfox", hidden = true, direction = "float", dir = "." })
 function _lazygit_toggle()
   lazygit:toggle()
@@ -21,12 +22,15 @@ end
 function _musicfox_toggle()
   musicfox:toggle()
 end
+function _tmux_toggle()
+  tmux:toggle()
+end
 unmap("n", "<leader>fT")
 unmap("n", "<leader>ft")
 unmap("n", "<leader>gg")
 unmap("n", "<leader>gG")
 unmap("n", "<C-/>")
-map("n", "<leader>tt", "<cmd>ToggleTerm dir=. direction=float name=floating<cr>i<backspace>", {noremap = true, silent = true, desc = "ToggleTerm Float"})
+map("n", "<leader>tt", "<cmd>lua _tmux_toggle()<cr>", {noremap = true, silent = true, desc = "ToggleTerm Float"})
 map("n", "<leader>gg", "<cmd>lua _lazygit_toggle()<cr>", {noremap = true, silent = true, desc = "Lazygit"})
 map("n", "<leader>tm", "<cmd>lua _musicfox_toggle()<cr>", {noremap = true, silent = true, desc = "Musicfox (tmux)"})
 map("t", "<C-Esc>", "<C-\\><C-n><cmd>ToggleTerm<cr>")

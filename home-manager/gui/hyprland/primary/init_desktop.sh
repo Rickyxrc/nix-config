@@ -3,7 +3,7 @@ tmux kill-session -t daemon
 tmux kill-session -t proxy
 tmux kill-session -t musicfox
 
-export INTERVAL=0.8
+export INTERVAL=0.6
 
 # Music
 tmux new-session -d -s musicfox -n musicfox -d "musicfox"
@@ -62,5 +62,5 @@ sleep $INTERVAL
 hyprctl dispatch workspace 1
 sleep $INTERVAL
 
-sleep 15                         # wait musicfox loading + proxy booting
-tmux send-keys -t musicfox space # start playing
+# sleep 15                         # wait musicfox loading + proxy booting
+# tmux send-keys -t musicfox space # start playing
