@@ -1,6 +1,11 @@
 { pkgs, ... }: 
 {
-    programs.neovim.enable = true;
+    programs.neovim = {
+        enable = true;
+        defaultEditor = true;
+        viAlias = true;
+        vimAlias = true;
+    };
     home.file.".config/nvim" = {
         source = ./conf;
         recursive = true;
