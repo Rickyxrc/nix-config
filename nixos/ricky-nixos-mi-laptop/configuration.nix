@@ -69,11 +69,17 @@
     # vim # Do not forget to add an editor to edit configuration.nix! The Nano editor is also installed by default.
     pulseaudio
     sof-firmware
+    inputs.agenix.packages.x86_64-linux.default
   ];
 
   programs.hyprland = {
     enable = true;
     package = inputs.hyprland.packages.${pkgs.system}.hyprland;
+  };
+
+  programs.gnupg.agent = {
+    enable = true;
+    pinentryFlavor = "curses";
   };
 
   fonts.packages = with pkgs; [

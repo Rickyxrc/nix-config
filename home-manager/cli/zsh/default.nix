@@ -15,6 +15,8 @@
 
             # set env vars
             export EDITOR=vim
+            export GPG_TTY=$(tty)
+            gpg-connect-agent updatestartuptty /bye >/dev/null
 
             # Other package generated hook
         '';

@@ -22,6 +22,7 @@
     atcodercli.url = "github:rickyxrc/at-cli/tags/v0.5.5";
     nix-gaming.url = "github:fufexan/nix-gaming";
     pylauncher.url = "github:rickyxrc/pylauncher";
+    agenix.url = "github:ryantm/agenix";
   };
 
   outputs = {
@@ -31,6 +32,7 @@
     hyprland,
     nur,
     cf-tool,
+    agenix,
     ...
   } @ inputs: let
     inherit (self) outputs;
@@ -42,6 +44,7 @@
         specialArgs = {inherit inputs outputs;};
         modules = [
           ./nixos/ricky-nixos-mi-laptop/configuration.nix
+          agenix.nixosModules.default
         ];
       };
     };

@@ -54,6 +54,8 @@
         pamixer     # control volume
         gh          # Github cli
         rclone      # Sync data across cloud drives
+        gnupg       # GPG 2
+        pinentry    # Required by GPG2
     ];
 
     # Enable home-manager
