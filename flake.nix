@@ -1,7 +1,8 @@
 {
   description = "Ricky's nix config";
 
-  inputs = { # Nixpkgs
+  inputs = {
+    # Nixpkgs
     nixpkgs = {
       url = "github:nixos/nixpkgs/nixos-23.11";
     };
@@ -49,49 +50,57 @@
     secrets.url = "git+ssh://git@github.com/rickyxrc/nix-secrets";
   };
 
-  outputs = {
-    self,
-    nixpkgs,
-    home-manager,
-    hyprland,
-    nur,
-    cf-tool,
-    agenix,
-    secrets,
-    ...
-  } @ inputs: let
-    inherit (self) outputs;
-  in {
-    # NixOS configuration entrypoint
-    # Available through 'nixos-rebuild --flake .#your-hostname'
-    nixosConfigurations = {
-      "ricky-nixos-mi-laptop" = nixpkgs.lib.nixosSystem {
-        specialArgs = {inherit inputs outputs;};
-        modules = [
-          ./nixos/ricky-nixos-mi-laptop/configuration.nix
-          ./secrets
-        ];
+  outputs =
+    { self
+    , nixpkgs
+    , home-manager
+    , hyprland
+    , nur
+    , cf-tool
+    , agenix
+    , secrets
+    , ...
+    } @ inputs:
+    let
+      system = "x86_64-linux";
+      pkgs = nixpkgs.legacyPackages."${system}";
+      inherit (self) outputs;
+    in
+    {
+      # NixOS configuration entrypoint
+      # Available through 'nixos-rebuild --flake .#your-hostname'
+      nixosConfigurations = {
+        "ricky-nixos-mi-laptop" = nixpkgs.lib.nixosSystem {
+          specialArgs = { inherit inputs outputs; };
+          modules = [
+            ./nixos/ricky-nixos-mi-laptop/configuration.nix
+            ./secrets
+          ];
+        };
       };
-    };
 
-    # Standalone home-manager configuration entrypoint
-    # Available through 'home-manager --flake .#your-username@your-hostname'
-    homeConfigurations = {
-      "ricky@ricky-nixos-mi-laptop" = home-manager.lib.homeManagerConfiguration {
-        pkgs = nixpkgs.legacyPackages.x86_64-linux;
-        extraSpecialArgs = {inherit inputs outputs;};
-        modules = [
-          hyprland.homeManagerModules.default
-          ./home-manager/home-hyprland.nix
-        ];
+      # Standalone home-manager configuration entrypoint
+      # Available through 'home-manager --flake .#your-username@your-hostname'
+      homeConfigurations = {
+        "ricky@ricky-nixos-mi-laptop" = home-manager.lib.homeManagerConfiguration {
+          pkgs = nixpkgs.legacyPackages.x86_64-linux;
+          extraSpecialArgs = { inherit inputs outputs; };
+          modules = [
+            hyprland.homeManagerModules.default
+            ./home-manager/home-hyprland.nix
+          ];
+        };
+        "ricky@ricky-ubuntu-xjcw-virtual-machine" = home-manager.lib.homeManagerConfiguration {
+          pkgs = nixpkgs.legacyPackages.x86_64-linux;
+          extraSpecialArgs = { inherit inputs outputs; };
+          modules = [
+            ./home-manager/home-gui.nix
+          ];
+        };
       };
-      "ricky@ricky-ubuntu-xjcw-virtual-machine" = home-manager.lib.homeManagerConfiguration {
-        pkgs = nixpkgs.legacyPackages.x86_64-linux;
-        extraSpecialArgs = {inherit inputs outputs;};
-        modules = [
-          ./home-manager/home-gui.nix
-        ];
+
+      devShells."${system}".default = pkgs.mkShell {
+        packages = with pkgs; [ pre-commit nixpkgs-fmt ];
       };
     };
-  };
 }
