@@ -58,6 +58,20 @@
   # Enable automatic login for the user.
   services.getty.autologinUser = "ricky";
 
+  # Generate host ssh key
+  services.openssh = {
+    enable = true;
+    hostKeys = [
+      {
+        bits = 4096;
+        openSSHFormat = true;
+        path = "/etc/ssh/ssh_host_ed25519_key";
+        rounds = 100;
+        type = "ed25519";
+      }
+    ];
+  };
+
   # Allow unfree packages
   nixpkgs.config.allowUnfree = true;
 

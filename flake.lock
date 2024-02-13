@@ -390,11 +390,11 @@
     },
     "nixpkgs_6": {
       "locked": {
-        "lastModified": 1707514827,
-        "narHash": "sha256-Y+wqFkvikpE1epCx57PsGw+M1hX5aY5q/xgk+ebDwxI=",
+        "lastModified": 1707650010,
+        "narHash": "sha256-dOhphIA4MGrH4ElNCy/OlwmN24MsnEqFjRR6+RY7jZw=",
         "owner": "nixos",
         "repo": "nixpkgs",
-        "rev": "20f65b86b6485decb43c5498780c223571dd56ef",
+        "rev": "809cca784b9f72a5ad4b991e0e7bcf8890f9c3a6",
         "type": "github"
       },
       "original": {
@@ -438,11 +438,11 @@
     },
     "nur": {
       "locked": {
-        "lastModified": 1707729478,
-        "narHash": "sha256-2HMTWJIwsL6kvt53Jfi/35eliXt9UCSl87cmwxuMbGM=",
+        "lastModified": 1707799474,
+        "narHash": "sha256-kvn6J8CxdmnfHkkjhD2ZdyZ9GyiXSykieRj9ToWycNo=",
         "owner": "nix-community",
         "repo": "NUR",
-        "rev": "c3641e09dbea9b64a331d5d8b5345dbda14ed42b",
+        "rev": "e6708f99c724920c27a9a8ebefa277ab8669aab2",
         "type": "github"
       },
       "original": {
@@ -524,7 +524,23 @@
         "nix-gaming": "nix-gaming",
         "nixpkgs": "nixpkgs_6",
         "nur": "nur",
-        "pylauncher": "pylauncher"
+        "pylauncher": "pylauncher",
+        "secrets": "secrets"
+      }
+    },
+    "secrets": {
+      "locked": {
+        "lastModified": 1707801798,
+        "narHash": "sha256-XMfI8caTIwyFfFTirp5HdO+wtWlFCteMclTZlnNgtbc=",
+        "ref": "refs/heads/master",
+        "rev": "3122138183f17080103bfbef42e41add72d426c9",
+        "revCount": 5,
+        "type": "git",
+        "url": "ssh://git@github.com/rickyxrc/nix-secrets"
+      },
+      "original": {
+        "type": "git",
+        "url": "ssh://git@github.com/rickyxrc/nix-secrets"
       }
     },
     "systems": {

@@ -1,8 +1,7 @@
 {
   description = "Ricky's nix config";
 
-  inputs = {
-    # Nixpkgs
+  inputs = { # Nixpkgs
     nixpkgs.url = "github:nixos/nixpkgs/nixos-23.11";
 
     # Home manager
@@ -23,6 +22,8 @@
     nix-gaming.url = "github:fufexan/nix-gaming";
     pylauncher.url = "github:rickyxrc/pylauncher";
     agenix.url = "github:ryantm/agenix";
+
+    secrets.url = "git+ssh://git@github.com/rickyxrc/nix-secrets";
   };
 
   outputs = {
@@ -33,6 +34,7 @@
     nur,
     cf-tool,
     agenix,
+    secrets,
     ...
   } @ inputs: let
     inherit (self) outputs;
@@ -44,7 +46,7 @@
         specialArgs = {inherit inputs outputs;};
         modules = [
           ./nixos/ricky-nixos-mi-laptop/configuration.nix
-          agenix.nixosModules.default
+          ./secrets
         ];
       };
     };
