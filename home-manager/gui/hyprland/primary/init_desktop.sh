@@ -34,8 +34,10 @@ sleep $INTERVAL
 discord &
 sleep $INTERVAL
 
-# hyprctl dispatch workspace 3
-# sleep $INTERVAL
+hyprctl dispatch workspace 3
+sleep $INTERVAL
+thunderbird
+sleep $INTERVAL
 
 # hyprctl dispatch workspace 4
 # sleep $INTERVAL

@@ -58,6 +58,7 @@
     rclone # Sync data across cloud drives
     gnupg # GPG 2
     pinentry # Required by GPG2
+    killall # LMAOOOO
   ];
 
   # Enable home-manager
