@@ -1,9 +1,9 @@
 repos:
   - repo: local
     hooks:
-      id: format
-      name: format-code
-      entry: $(echo "nixpkgs-fmt" $(tree -if | rg .nix))
-      language: system
-      always_run: true
+      - id: format
+        name: format-code
+        entry: sh -c '$(echo "nixpkgs-fmt" $(tree -if | rg .nix))'
+        language: system
+        always_run: true
 

@@ -6,9 +6,10 @@
 
 {
   imports =
-    [ # Include the results of the hardware scan.
-        # /etc/nixos/hardware-configuration.nix
-        ./hardware-configuration.nix
+    [
+      # Include the results of the hardware scan.
+      # /etc/nixos/hardware-configuration.nix
+      ./hardware-configuration.nix
     ];
 
   # Bootloader.
@@ -50,7 +51,7 @@
     isNormalUser = true;
     description = "ricky";
     extraGroups = [ "networkmanager" "wheel" "input" "audio" ];
-    packages = [];
+    packages = [ ];
   };
   users.users.ricky.shell = pkgs.zsh;
   users.users.ricky.ignoreShellProgramCheck = true;
@@ -97,18 +98,18 @@
   };
 
   fonts.packages = with pkgs; [
-      noto-fonts
-      noto-fonts-emoji
+    noto-fonts
+    noto-fonts-emoji
 
-      # udev-gothic-nf
+    # udev-gothic-nf
 
-      source-han-sans
-      source-han-serif
+    source-han-sans
+    source-han-serif
 
-      fira-code
-      fira-code-symbols
+    fira-code
+    fira-code-symbols
 
-      nerdfonts
+    nerdfonts
   ];
 
   nixpkgs.config.pulseaudio = true;
