@@ -10,10 +10,6 @@ Now this config have these hosts:
 
 - `ricky@ricky-nixos-mi-laptop` My laptop, contains full desktop environment and software.
 
-Upcoming support:
-
-- `ricky@ricky-nixos-minimal-xjcw-virtual-machine` My competitive programming VM in school, contains NO desktop and minimal software (like vim, gcc) and connects use ssh.
-
 ## To do
 
 - Tex environment build

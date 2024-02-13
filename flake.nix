@@ -2,26 +2,49 @@
   description = "Ricky's nix config";
 
   inputs = { # Nixpkgs
-    nixpkgs.url = "github:nixos/nixpkgs/nixos-23.11";
-
-    # Home manager
-    home-manager = {
-        url = "github:nix-community/home-manager/release-23.11";
-        inputs.nixpkgs.follows = "nixpkgs";
+    nixpkgs = {
+      url = "github:nixos/nixpkgs/nixos-23.11";
     };
 
-    # Hyprland config
+    home-manager = {
+      url = "github:nix-community/home-manager/release-23.11";
+      inputs.nixpkgs.follows = "nixpkgs";
+    };
+
     hyprland = {
       url = "github:hyprwm/Hyprland/v0.33.1";
       inputs.nixpkgs.follows = "nixpkgs";
     };
 
     nur.url = "github:nix-community/NUR";
-    cf-tool.url = "github:rickyxrc/cf-tool";
-    atcodercli.url = "github:rickyxrc/at-cli/tags/v0.5.5";
-    nix-gaming.url = "github:fufexan/nix-gaming";
-    pylauncher.url = "github:rickyxrc/pylauncher";
-    agenix.url = "github:ryantm/agenix";
+
+    cf-tool = {
+      url = "github:rickyxrc/cf-tool";
+      inputs.nixpkgs.follows = "nixpkgs";
+    };
+
+    atcodercli = {
+      url = "github:rickyxrc/at-cli/tags/v0.5.5";
+      inputs.nixpkgs.follows = "nixpkgs";
+    };
+
+    nix-gaming = {
+      url = "github:fufexan/nix-gaming";
+      inputs.nixpkgs.follows = "nixpkgs";
+    };
+
+    pylauncher = {
+      url = "github:rickyxrc/pylauncher";
+      inputs.nixpkgs.follows = "nixpkgs";
+    };
+
+    agenix = {
+      url = "github:ryantm/agenix";
+      inputs = {
+        nixpkgs.follows = "nixpkgs";
+        home-manager.follows = "home-manager";
+      };
+    };
 
     secrets.url = "git+ssh://git@github.com/rickyxrc/nix-secrets";
   };
