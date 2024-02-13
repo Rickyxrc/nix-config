@@ -5,7 +5,6 @@
 , ...
 }: {
   imports = [
-    # ./cli/neovim
     ./cli/lazyvim
     ./cli/git
     ./cli/tmux

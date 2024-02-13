@@ -13,7 +13,7 @@
     pavucontrol # controls audio output
     wineWowPackages.stable # wine
     grim # Screen shot
-    # steam       # Everyone knows It's useless on linux
+    # steam                # Everyone knows It's useless on linux
     winetricks # Wine helper
     musescore # Midi file editor
     hmcl # Minecraft launcher

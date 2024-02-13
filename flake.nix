@@ -83,7 +83,7 @@
       # Available through 'home-manager --flake .#your-username@your-hostname'
       homeConfigurations = {
         "ricky@ricky-nixos-mi-laptop" = home-manager.lib.homeManagerConfiguration {
-          pkgs = nixpkgs.legacyPackages.x86_64-linux;
+          inherit pkgs;
           extraSpecialArgs = { inherit inputs outputs; };
           modules = [
             hyprland.homeManagerModules.default
@@ -91,7 +91,7 @@
           ];
         };
         "ricky@ricky-ubuntu-xjcw-virtual-machine" = home-manager.lib.homeManagerConfiguration {
-          pkgs = nixpkgs.legacyPackages.x86_64-linux;
+          inherit pkgs;
           extraSpecialArgs = { inherit inputs outputs; };
           modules = [
             ./home-manager/home-gui.nix
@@ -100,7 +100,7 @@
       };
 
       devShells."${system}".default = pkgs.mkShell {
-        packages = with pkgs; [ pre-commit nixpkgs-fmt ];
+        packages = with pkgs; [ pre-commit nixpkgs-fmt just ];
       };
     };
 }
