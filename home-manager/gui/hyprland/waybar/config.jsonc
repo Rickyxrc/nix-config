@@ -10,6 +10,7 @@
     "custom/left",
     "clock",
     "cpu",
+    "memory",
     "custom/right"
   ],
   //"modules-left": ["clock","hyprland/window"],
@@ -21,12 +22,15 @@
   ],
   "modules-right": [
     "custom/left",
-    "temperature",
-    "battery",
-    "network",
     "backlight",
     "pulseaudio",
+    "custom/right",
+    "custom/left",
+    "battery",
+    "temperature",
+    "network",
     "bluetooth",
+    "disk",
     "custom/right"
   ],
   "hyprland/window": {
@@ -39,12 +43,12 @@
     "sort-by-number": true,
     "on-click": "activate",
     "format-icons": {
-      "1": "\ue7c5",
-      "2": "\udb81\ude6f",
-      "3": "\ueb1c",
-      "4": "4 ",
-      "5": "5 ",
-      "6": "\udb80\ude39",
+      "1": "\ue7c5", // vim
+      "2": "2 ",
+      "3": "3 ",
+      "4": "\udb81\ude6f", // discord
+      "5": "\ueb1c", // mail
+      "6": "\udb80\ude39", // firefox
       "7": "7 ",
       "8": "8 ",
       "9": "9 "
@@ -166,12 +170,14 @@
     "format-connected": " {num_connections}",
     "tooltip-format": "{device_alias}",
     "tooltip-format-connected": " {device_enumerate}",
-    "tooltip-format-enumerate-connected": "{device_alias}"
+    "tooltip-format-enumerate-connected": "{device_alias}",
+    "on-click": "kitty bluetoothctl"
   },
   "custom/nowplaying": {
     "format": "{}",
     "exec": "sh ~/.config/waybar/nowplaying.sh",
-    "restart-interval": 5
+    "restart-interval": 5,
+    "on-click": "kitty tmux attach-session -t musicfox"
   },
   "custom/left": {
     "format": "  "
@@ -183,6 +189,7 @@
     "format": "  "
   },
   "cpu": {
+    "interval": 10,
     "format": "\uf4bc {icon0}{icon1}{icon2}{icon3}{icon4}{icon5}{icon6}{icon7}",
     "format-icons": [
       " ",
@@ -195,6 +202,16 @@
       "▆",
       "▇",
       "█"
-    ]
+    ],
+    "on-click": "kitty htop"
+  },
+  "disk": {
+    "interval": 600,
+    "format": "\udb82\ude23 {percentage_free}%",
+    "tooltip": "{percentage_free}% : {used} / {total}"
+  },
+  "memory": {
+    "interval": 10,
+    "format": "{used:0.1f}G / {total:0.1f}G"
   }
 }

@@ -21,7 +21,6 @@
   };
   home.file.".config/hypr/binds.conf".source = ./gui/hyprland/primary/binds.conf;
   home.file.".config/hypr/workspace.conf".source = ./gui/hyprland/primary/workspace.conf;
-  home.file.".config/hypr/init_desktop.sh".source = ./gui/hyprland/primary/init_desktop.sh;
   home.file.".config/hypr/screenshot.sh".source = ./gui/hyprland/primary/screenshot.sh;
 
   # Hyprland Wallpaper Config
