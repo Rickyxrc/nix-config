@@ -19,6 +19,7 @@
 
   nixpkgs = {
     overlays = [
+      (import ../overlays/fcitx5)
       # Load NUR overlay here to use it with pkgs.nur
       inputs.nur.overlay
     ];
