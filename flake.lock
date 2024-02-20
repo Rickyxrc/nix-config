@@ -12,11 +12,11 @@
         "systems": "systems"
       },
       "locked": {
-        "lastModified": 1703433843,
-        "narHash": "sha256-nmtA4KqFboWxxoOAA6Y1okHbZh+HsXaMPFkYHsoDRDw=",
+        "lastModified": 1707830867,
+        "narHash": "sha256-PAdwm5QqdlwIqGrfzzvzZubM+FXtilekQ/FA0cI49/o=",
         "owner": "ryantm",
         "repo": "agenix",
-        "rev": "417caa847f9383e111d1397039c9d4337d024bf0",
+        "rev": "8cb01a0e717311680e0cbca06a76cbceba6f3ed6",
         "type": "github"
       },
       "original": {
@@ -242,11 +242,11 @@
         ]
       },
       "locked": {
-        "lastModified": 1707614138,
-        "narHash": "sha256-xdmNhDnlDF5H/yT1wLGqwVyphjj03lmA/e3SGXyC3DU=",
+        "lastModified": 1708433103,
+        "narHash": "sha256-Fxmfx7jSrLeMGYq634/RDWJwoKRw11ahDroOF0mIQiE=",
         "owner": "fufexan",
         "repo": "nix-gaming",
-        "rev": "a5de885438ecce695b4b7a110974c33f0eb507e3",
+        "rev": "d154dc37e5a1179def36813fee1016a764090535",
         "type": "github"
       },
       "original": {
@@ -335,11 +335,11 @@
     },
     "nixpkgs_2": {
       "locked": {
-        "lastModified": 1707650010,
-        "narHash": "sha256-dOhphIA4MGrH4ElNCy/OlwmN24MsnEqFjRR6+RY7jZw=",
+        "lastModified": 1708294118,
+        "narHash": "sha256-evZzmLW7qoHXf76VCepvun1esZDxHfVRFUJtumD7L2M=",
         "owner": "nixos",
         "repo": "nixpkgs",
-        "rev": "809cca784b9f72a5ad4b991e0e7bcf8890f9c3a6",
+        "rev": "e0da498ad77ac8909a980f07eff060862417ccf7",
         "type": "github"
       },
       "original": {
@@ -367,11 +367,11 @@
     },
     "nur": {
       "locked": {
-        "lastModified": 1707799474,
-        "narHash": "sha256-kvn6J8CxdmnfHkkjhD2ZdyZ9GyiXSykieRj9ToWycNo=",
+        "lastModified": 1708447659,
+        "narHash": "sha256-xfoidzgzBd6Kp8VKf4R2n5woOKXWKzx3YF5qhu7S28k=",
         "owner": "nix-community",
         "repo": "NUR",
-        "rev": "e6708f99c724920c27a9a8ebefa277ab8669aab2",
+        "rev": "1b9b8c8d29f7327e3adf76f9a0d413b2fced9e81",
         "type": "github"
       },
       "original": {
@@ -462,11 +462,11 @@
     },
     "secrets": {
       "locked": {
-        "lastModified": 1707804456,
-        "narHash": "sha256-3ZLySi8m6tngQ1IUKfmH63FKtcnK58Yi2pdDRszeNvE=",
+        "lastModified": 1708450201,
+        "narHash": "sha256-5zvg4LoZOCgyFj9BU2PhM7jzn2YIzMAbptUMstqBv2o=",
         "ref": "refs/heads/master",
-        "rev": "b8e18f48654d9a9769a47c59a67f4b5792173fa2",
-        "revCount": 6,
+        "rev": "c8a6e9f26f553a1ba662890874a24224b6ea54a7",
+        "revCount": 8,
         "type": "git",
         "url": "ssh://git@github.com/rickyxrc/nix-secrets"
       },

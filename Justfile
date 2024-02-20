@@ -25,3 +25,5 @@ clean-package:
   sudo nix store gc --debug
   sudo nix-collect-garbage --delete-old
 
+rclone:
+  rclone sync ~/archive-zipped onedrive:/code-archive --transfers 1 --progress

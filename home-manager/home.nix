@@ -64,6 +64,7 @@
     gnupg # GPG 2
     pinentry # Required by GPG2
     killall # LMAOOOO
+    zip # I have unzip and don't have zip LMAO
   ];
 
   # password store using gpg key
