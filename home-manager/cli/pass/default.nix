@@ -10,10 +10,10 @@
       # PASSWORD_STORE_DIR = "${config.xdg.dataHome}/password-store";
 
       PASSWORD_STORE_KEY = lib.strings.concatStringsSep " " [
-        "1848FF441D9359F5"
+        "01AF66273CC61FFA" # Ricky (Secret Encription only) <rickyxrc@outlook.com>
       ];
       PASSWORD_STORE_SIGNING_KEY = lib.strings.concatStringsSep " " [
-        "EC3A13D0EF2D264E"
+        "EC3A13D0EF2D264E" # Ricky <rickyxrc@outlook.com>
       ];
 
       PASSWORD_STORE_CLIP_TIME = "60";
