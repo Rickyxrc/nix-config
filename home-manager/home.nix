@@ -2,9 +2,12 @@
 # Use this to configure your home environment (it replaces ~/.config/nixpkgs/home.nix)
 { inputs
 , pkgs
+, config
 , ...
 }: {
   imports = [
+    ../secrets/home.nix
+
     ./cli/lazyvim
     ./cli/git
     ./cli/tmux
@@ -15,6 +18,7 @@
     ./cli/zsh
     ./cli/direnv
     ./cli/calcurse
+    ./cli/pass
   ];
 
   nixpkgs = {
@@ -61,6 +65,13 @@
     pinentry # Required by GPG2
     killall # LMAOOOO
   ];
+
+  # password store using gpg key
+  # key id = 72C6FC8E1E9283861D97722C1848FF441D9359F5
+  # home.file.".password-store" = {
+  # source = "${inputs.passwords}";
+  # recursive = true;
+  # };
 
   # Enable home-manager
   programs.home-manager.enable = true;

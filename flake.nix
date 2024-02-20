@@ -47,7 +47,19 @@
       };
     };
 
+    homeage = {
+      url = "github:jordanisaacs/homeage";
+      inputs.nixpkgs.follows = "nixpkgs";
+    };
+
+    # NOTE: you can't deploy this flake bacause you can't access these repos.
+    # These are my private repos, includes my password and secret files.
     secrets.url = "git+ssh://git@github.com/rickyxrc/nix-secrets";
+    # NOTE: find a beter way to storage this
+    # passwords = {
+    # url = "git+ssh://git@github.com/rickyxrc/passwords";
+    # flake = false;
+    # };
   };
 
   outputs =
@@ -59,6 +71,7 @@
     , cf-tool
     , agenix
     , secrets
+    , homeage
     , ...
     } @ inputs:
     let
@@ -87,14 +100,8 @@
           extraSpecialArgs = { inherit inputs outputs; };
           modules = [
             hyprland.homeManagerModules.default
+            homeage.homeManagerModules.homeage
             ./home-manager/home-hyprland.nix
-          ];
-        };
-        "ricky@ricky-ubuntu-xjcw-virtual-machine" = home-manager.lib.homeManagerConfiguration {
-          inherit pkgs;
-          extraSpecialArgs = { inherit inputs outputs; };
-          modules = [
-            ./home-manager/home-gui.nix
           ];
         };
       };

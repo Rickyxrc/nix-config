@@ -8,10 +8,18 @@
     hyprpaper # Background
     brightnessctl # Display brightness
     wl-clipboard # Clipboard
-    xdg-desktop-portal-hyprland # Hyprland helper
+    # pipewire # Hyprland must-have
+    # wireplumber # too
+    xdg-desktop-portal-hyprland
+    xdg-desktop-portal-gtk
+    xdg-utils # xdg-open and more
   ];
 
   systemd.user.targets.hyprland-session.Unit.Wants = [ "xdg-desktop-autostart.target" ];
+
+  xdg = {
+    enable = true;
+  };
 
   # Hyprland Basic Config
   wayland.windowManager.hyprland = {
@@ -49,5 +57,10 @@
       fcitx5-chinese-addons
       fcitx5-gtk
     ];
+  };
+
+  programs.obs-studio = {
+    enable = true;
+    plugins = with pkgs.obs-studio-plugins; [ wlrobs ];
   };
 }
