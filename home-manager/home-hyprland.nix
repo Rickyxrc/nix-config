@@ -44,7 +44,7 @@
     recursive = true;
   };
 
-  # Notifi daemon
+  # Notify daemon
   services.mako.enable = true;
 
   programs.obs-studio = {
