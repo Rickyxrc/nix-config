@@ -4,6 +4,7 @@
     ./gui/firefox # Browser 
     ./gui/kitty # Terminal emulator
     ./gui/pylauncher # Simple Launcher(active environment and start neovide.)
+    ./gui/fcitx5 # Fcitx config and themes
   ];
 
   home.packages = with pkgs; [

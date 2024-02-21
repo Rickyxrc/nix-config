@@ -73,6 +73,10 @@
     ];
   };
 
+  services.v2raya = {
+    enable = true;
+  };
+
   # Allow unfree packages
   nixpkgs.config.allowUnfree = true;
 

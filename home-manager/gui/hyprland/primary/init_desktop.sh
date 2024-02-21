@@ -18,15 +18,11 @@ sleep $INTERVAL
 
 tmux split-window -t daemon -d "start-pulseaudio-x11"
 
-# proxy
-tmux new-session -d -s proxy -d "sudo v2rayA"
-
 hyprctl dispatch workspace 1
 sleep $INTERVAL
 kitty tmux pylauncher
 # neovide & # need environment, so replaced
 sleep $INTERVAL
-kitty tmux attach-session -t proxy & # prompt for password, so focus on this
 sleep $INTERVAL
 
 hyprctl dispatch workspace 2
