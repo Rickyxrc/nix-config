@@ -9,9 +9,9 @@ switch-home:
 add-xiaohe-word:
   nvim ~/nix-config/overlays/fcitx5/rime-data-flypy/share/rime-data/flypy_user.txt
   just switch-home
-  git add .
+  git add ~/nix-config/overlays/fcitx5/rime-data-flypy/share/rime-data/flypy_user.txt
+  kitty htop & # kill fcitx5 manually lol.
   git commit -m "feat(fcitx5): add custom word[by snippet]"
-  kitty htop # kill fcitx5 manually lol.
 
 ax: add-xiaohe-word
 
