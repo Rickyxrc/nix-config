@@ -57,7 +57,7 @@
   users.users.ricky.ignoreShellProgramCheck = true;
 
   # Enable automatic login for the user.
-  services.getty.autologinUser = "ricky";
+  # services.getty.autologinUser = "ricky";
 
   # Generate host ssh key
   services.openssh = {

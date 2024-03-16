@@ -1,5 +1,6 @@
 return {
-  "williamboman/mason.nvim",
+  "mason.nvim",
+  enabled = false,
   opts = {
     ensure_installed = {
       "lua-language-server",
@@ -10,6 +11,7 @@ return {
       "deno",
       "json-lsp",
       "omnisharp",
+      "ast-grep",
     },
   },
 }

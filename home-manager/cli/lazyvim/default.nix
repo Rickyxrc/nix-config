@@ -15,5 +15,8 @@
     ripgrep # Advanced command for 'grep', required by vimPlugins.Telescope-nvim.
     fd # Advanced command for 'find', required by vimPlugins.Telescope-nvim.
     tree-sitter # required by treesitter
+    ast-grep # Useful lsp
+    rust-analyzer # rust lsp
+    lua-language-server # lol.
   ];
 }

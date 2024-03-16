@@ -1,11 +1,11 @@
 return {
   "neovim/nvim-lspconfig",
-  event = "LazyFile",
+  event = "VimEnter",
   dependencies = {
     { "folke/neoconf.nvim", cmd = "Neoconf", config = false, dependencies = { "nvim-lspconfig" } },
     { "folke/neodev.nvim", opts = {} },
-    "mason.nvim",
-    "williamboman/mason-lspconfig.nvim",
+    -- "mason.nvim",
+    -- "williamboman/mason-lspconfig.nvim",
   },
   ---@class PluginLspOpts
   opts = {
@@ -22,6 +22,8 @@ return {
       },
       severity_sort = true,
     },
+    servers = {
+      -- pyright will be automatically installed with mason and loaded with lspconfig
+    },
   }
 }
-
