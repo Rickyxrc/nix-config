@@ -6,6 +6,15 @@ switch-system:
 switch-home:
   home-manager --flake . switch
 
+add-xiaohe-word:
+  nvim ~/nix-config/overlays/fcitx5/rime-data-flypy/share/rime-data/flypy_user.txt
+  just switch-home
+  git add .
+  git commit -m "feat(fcitx5): add custom word[by snippet]"
+  kitty htop # kill fcitx5 manually lol.
+
+ax: add-xiaohe-word
+
 update-flake:
   nix flake update
 
