@@ -18,6 +18,9 @@
       export GPG_TTY=$(tty)
       gpg-connect-agent updatestartuptty /bye >/dev/null
 
+      alias j="just"
+      alias cf="cf-tool"
+
       # Other package generated hook
     '';
   };

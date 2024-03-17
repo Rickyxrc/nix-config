@@ -1,4 +1,5 @@
 # load starship
 eval "$(starship init bash)"
 alias cf="cf-tool"
+alias j="just"
 
