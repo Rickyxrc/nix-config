@@ -22,7 +22,7 @@
 洛天依	ltyi
 乐正绫	yvlk
 乐正绫	lvlk
-乘风	igfg
+数论	uuly
 
 # 自带的，全码词
 杯子	bwzi
