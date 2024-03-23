@@ -1,0 +1,9 @@
+customization:
+  distribution_code_name: hamster
+  distribution_version: 3
+  generator: "Rime::SwitcherSettings"
+  modified_time: "Wed Mar 20 23:07:30 2024"
+  rime_version: 1.9.0
+patch:
+  schema_list:
+    - {schema: flypy}
