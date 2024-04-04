@@ -18,5 +18,6 @@
     ast-grep # Useful lsp
     rust-analyzer # rust lsp
     lua-language-server # lol.
+    nil # nix lsp
   ];
 }
