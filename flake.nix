@@ -101,7 +101,7 @@
           modules = [
             hyprland.homeManagerModules.default
             homeage.homeManagerModules.homeage
-            ./home-manager/home-hyprland.nix
+            ./home-manager/home-kde.nix
           ];
         };
       };

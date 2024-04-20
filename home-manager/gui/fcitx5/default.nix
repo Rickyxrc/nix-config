@@ -1,6 +1,5 @@
-{
-  pkgs,
-  # nur-ryan4yin,
+{ pkgs
+, # nur-ryan4yin,
   ...
 }: {
   home.file.".local/share/fcitx5/themes" = {

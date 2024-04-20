@@ -8,11 +8,6 @@
       ];
     };
     initExtra = ''
-      # Launch Hyprland at tty1
-      if [[ $TTY == /dev/tty1 ]]; then
-          Hyprland;
-      fi
-
       # set env vars
       export EDITOR=vim
       export GPG_TTY=$(tty)
@@ -20,6 +15,7 @@
 
       alias j="just"
       alias cf="cf-tool"
+      alias y="yadm"
 
       # Other package generated hook
     '';

@@ -17,6 +17,7 @@
   boot.loader.efi.canTouchEfiVariables = true;
 
   networking.hostName = "ricky-nixos-mi-laptop"; # Define your hostname.
+  networking.proxy.allProxy = "127.0.0.1:20171";
 
   # Enable networking
   networking.networkmanager.enable = true;
@@ -45,7 +46,12 @@
     layout = "us";
     xkbVariant = "";
   };
+  services.xserver.enable = true;
+  services.xserver.displayManager.sddm.enable = true;
+  services.xserver.desktopManager.plasma5.enable = true;
+  # KDE Plasma 6 is now available on unstable
 
+  # services.desktopManager.plasma6.enable = true;
   # Define a user account. Don't forget to set a password with ‘passwd’.
   users.users.ricky = {
     isNormalUser = true;
@@ -83,6 +89,12 @@
   nix.settings.experimental-features = "nix-command flakes";
   nix.settings.trusted-users = [ "ricky" ];
 
+  environment.sessionVariables = {
+    INPUT_METHOD = "fcitx5";
+    GTK_IM_MODULE = "fcitx5";
+    QT_IM_MODULE = "fcitx5";
+    XMODIFIERS = "fcitx5";
+  };
   # List packages installed in system profile. To search, run:
   environment.systemPackages = with pkgs; [
     # vim # Do not forget to add an editor to edit configuration.nix! The Nano editor is also installed by default.
@@ -90,13 +102,6 @@
     sof-firmware
     inputs.agenix.packages.x86_64-linux.default
   ];
-
-  programs.hyprland = {
-    enable = true;
-    xwayland.enable = true;
-    package = inputs.hyprland.packages.${pkgs.system}.hyprland;
-    portalPackage = pkgs.xdg-desktop-portal-hyprland;
-  };
 
   programs.gnupg.agent = {
     enable = true;

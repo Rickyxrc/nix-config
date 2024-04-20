@@ -15,7 +15,7 @@ add-xiaohe-word:
 
 ax: add-xiaohe-word
 
-update-flake:
+update:
   nix flake update
 
 # usage: just update-flake i=nixpkgs

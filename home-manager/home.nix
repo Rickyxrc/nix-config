@@ -48,7 +48,7 @@
     neofetch # show colorful system status in terminal
     nodejs # required by vimPlugins.coc-nvim
     gcc # idk why install it globally.
-    v2raya # Everyone knows why chinese developers need it.
+    # v2raya # Everyone knows why chinese developers need it.
     lazygit # Terminal UI for git.
     go-musicfox # Netease music player in terminal.
     playerctl # Command line tool for media.
@@ -65,6 +65,7 @@
     pinentry # Required by GPG2
     killall # LMAOOOO
     zip # I have unzip and don't have zip LMAO
+    yadm # Yet another dotfile manager
   ];
 
   # password store using gpg key
