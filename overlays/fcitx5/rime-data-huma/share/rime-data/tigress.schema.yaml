@@ -87,6 +87,7 @@ engine:
     - history_translator@historyDM2 # 重复上屏 电脑2
     - history_translator@historyDM3 # 重复上屏 电脑3
     - history_translator@historySJ # 重复上屏 手机
+    # - history_translator@historySJ2 # 重复上屏 手机2
     - lua_translator@number_translator # 数字转大写
     - lua_translator@calculator_translator # 简易计算器
     - lua_translator@shijian2_translator # 高级时间
@@ -154,6 +155,8 @@ key_binder:
     #- { accept: space, send: Escape, when: composing } #无候选时(空码)空格清屏
     - { accept: semicolon, send: 2, when: has_menu } # 分号次选
     - { when: has_menu, accept: apostrophe, send: 3 } # 引号三选
+    - { accept: period, send: 2, when: has_menu } #句号次选 (用于iRime)
+    - { accept: comma, send: 3, when: has_menu } #逗号三选 (用于iRime)
     - { when: composing, accept: Tab, send: Escape } # tab清屏
     - { when: has_menu, accept: minus, send: Page_Up } # - 向后翻页
     - { when: has_menu, accept: equal, send: Page_Down } # = 向前翻页
@@ -168,20 +171,20 @@ key_binder:
     - { accept: "Control+h", toggle: extended_char, when: composing } # PC 自定字集开关
     - { accept: "Control+Shift+H", toggle: extended_char, when: composing } # PC 自定字集开关2
     - { accept: "Control+j", toggle: chaifen, when: composing } # PC 拆分滤镜开关
-    # - { when: composing, accept: '&', toggle: emoji_cn } # 手机 emoji开关
-    # - { when: composing, accept: '*', toggle: simplification } # 手机 繁简开关
-    # - { when: composing, accept: '\', toggle: pinyin } # 手机 拼音开关
-    # - { when: composing, accept: '^', toggle: charset_comment_filter } # 手机 Unicode分区开关1
-    # - { when: composing, accept: '#', toggle: charset_comment_filter } # 手机 Unicode分区开关2
-    # - { accept: "%", toggle: udpf_switch, when: composing }  #手机 Unicode编码开关
-    # - { accept: "+", toggle: udpf_switch, when: composing }  #手机 Unicode编码开关
-    # - { when: composing, accept: '_', toggle: extended_char} # 手机 自定字集开关1
-    # - { when: composing, accept: ':', toggle: extended_char} # 手机 自定字集开关2
-    # - { when: composing, accept: '"', toggle: chaifen } # 手机 拆分滤镜开关
+    - { when: composing, accept: '&', toggle: emoji_cn } # 手机 emoji开关
+    - { when: composing, accept: '*', toggle: simplification } # 手机 繁简开关
+    - { when: composing, accept: '\', toggle: pinyin } # 手机 拼音开关
+    - { when: composing, accept: '^', toggle: charset_comment_filter } # 手机 Unicode分区开关1
+    - { when: composing, accept: '#', toggle: charset_comment_filter } # 手机 Unicode分区开关2
+    - { accept: "%", toggle: udpf_switch, when: composing }  #手机 Unicode编码开关
+    - { accept: "+", toggle: udpf_switch, when: composing }  #手机 Unicode编码开关
+    - { when: composing, accept: '_', toggle: extended_char} # 手机 自定字集开关1
+    - { when: composing, accept: ':', toggle: extended_char} # 手机 自定字集开关2
+    - { when: composing, accept: '"', toggle: chaifen } # 手机 拆分滤镜开关
     - { when: has_menu, accept: Right, send: Down } # 右方向键 向后移动焦点
     - { when: has_menu, accept: Left, send: Up } # 左方向键 向前移动焦点
     - { when: always, accept: "Control+period" , toggle: ascii_punct } # 中英标点切换
-    #- { when: always, accept: "Shift+space" , toggle: full_shape } # 全半角切换
+    - { when: always, accept: "Shift+space" , toggle: full_shape } # 全半角切换
 
 recognizer:
   import_preset: default
@@ -200,6 +203,11 @@ historySJ:
   input: z
   size: 1
   initial_quality: 0
+
+# historySJ2:
+#   input: o
+#   size: 1
+#   initial_quality: 0
 
 historyDM:
   input: "["

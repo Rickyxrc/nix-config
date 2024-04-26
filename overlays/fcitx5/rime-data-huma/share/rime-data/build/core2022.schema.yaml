@@ -1,0 +1,19 @@
+__build_info:
+  rime_version: 1.9.0
+  timestamps:
+    core2022.custom: 0
+    core2022.schema: 1661153760
+    default: 1705568102
+    default.custom: 1679243132
+    key_bindings: 1705568100
+    key_bindings.custom: 0
+    punctuation: 1705568100
+    punctuation.custom: 0
+menu:
+  page_size: 5
+schema:
+  name: "字集过滤·伪方案·勿用"
+  schema_id: core2022
+translator:
+  dictionary: core2022
+  enable_user_dict: false
