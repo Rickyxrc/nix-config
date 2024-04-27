@@ -1,7 +1,7 @@
 __build_info:
-  rime_version: 1.9.0
+  rime_version: 1.10.0
   timestamps:
-    PY_c.custom: 0
+    PY_c.custom: 1714198303
     PY_c.schema: 1687493286
     default: 1705568102
     default.custom: 1679243132
@@ -484,8 +484,37 @@ simplification:
   tips: all
 speller:
   algebra:
-    - "abbrev/^([a-z]).+$/$1/"
-    - "abbrev/^([zcs]h).+$/$1/"
+    - "erase/^xx$/"
+    - "derive/^([jqxy])u$/$1v/"
+    - "derive/^([aoe])([ioun])$/$1$1$2/"
+    - "xform/^([aoe])(ng)?$/$1$1$2/"
+    - "xform/iu$/Q/"
+    - "xform/(.)ei$/$1W/"
+    - "xform/uan$/R/"
+    - "xform/[uv]e$/T/"
+    - "xform/un$/Y/"
+    - "xform/^sh/U/"
+    - "xform/^ch/I/"
+    - "xform/^zh/V/"
+    - "xform/uo$/O/"
+    - "xform/ie$/P/"
+    - "xform/i?ong$/S/"
+    - "xform/ing$|uai$/K/"
+    - "xform/(.)ai$/$1D/"
+    - "xform/(.)en$/$1F/"
+    - "xform/(.)eng$/$1G/"
+    - "xform/[iu]ang$/L/"
+    - "xform/(.)ang$/$1H/"
+    - "xform/ian$/M/"
+    - "xform/(.)an$/$1J/"
+    - "xform/(.)ou$/$1Z/"
+    - "xform/[iu]a$/X/"
+    - "xform/iao$/N/"
+    - "xform/(.)ao$/$1C/"
+    - "xform/ui$/V/"
+    - "xform/in$/B/"
+    - "xlit/QWRTYUIOPSDFGHJKLZXCVBNM/qwrtyuiopsdfghjklzxcvbnm/"
+    - "abbrev/^(.).+$/$1/"
   alphabet: "['zyxwvutsrqponmlkjihgfedcba]"
   delimiter: " '"
 style:
@@ -532,9 +561,38 @@ translator:
   initial_quality: 1
   max_phrase_length: 99
   preedit_format:
-    - "xform/([nl])v/$1ü/"
-    - "xform/([nl])ue/$1üe/"
+    - "xform/([bpmfdtnljqx])n/$1iao/"
+    - "xform/(\\w)g/$1eng/"
+    - "xform/(\\w)q/$1iu/"
+    - "xform/(\\w)w/$1ei/"
+    - "xform/([dtnlgkhjqxyvuirzcs])r/$1uan/"
+    - "xform/(\\w)t/$1ve/"
+    - "xform/(\\w)y/$1un/"
+    - "xform/([dtnlgkhvuirzcs])o/$1uo/"
+    - "xform/(\\w)p/$1ie/"
+    - "xform/([jqx])s/$1iong/"
+    - "xform/(\\w)s/$1ong/"
+    - "xform/(\\w)d/$1ai/"
+    - "xform/(\\w)f/$1en/"
+    - "xform/(\\w)h/$1ang/"
+    - "xform/(\\w)j/$1an/"
+    - "xform/([gkhvuirzcs])k/$1uai/"
+    - "xform/(\\w)k/$1ing/"
+    - "xform/([jqxnlb])l/$1iang/"
+    - "xform/(\\w)l/$1uang/"
+    - "xform/(\\w)z/$1ou/"
+    - "xform/([gkhvuirzcs])x/$1ua/"
+    - "xform/(\\w)x/$1ia/"
+    - "xform/(\\w)c/$1ao/"
+    - "xform/([dtgkhvuirzcs])v/$1ui/"
+    - "xform/(\\w)b/$1in/"
+    - "xform/(\\w)m/$1ian/"
+    - "xform/([aoe])\\1(\\w)/$1$2/"
+    - "xform/(^|[ '])v/$1zh/"
+    - "xform/(^|[ '])i/$1ch/"
+    - "xform/(^|[ '])u/$1sh/"
     - "xform/([jqxy])v/$1u/"
+    - "xform/([nl])v/$1ü/"
   prism: PY_c
   strict_spelling: false
   user_dict: PY_c
