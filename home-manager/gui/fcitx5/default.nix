@@ -2,12 +2,12 @@
 , # nur-ryan4yin,
   ...
 }: {
-  # home.file.".local/share/fcitx5/themes" = {
-  # source = ./themes;
-  # recursive = true;
-  # };
+  home.file.".local/share/fcitx5/themes" = {
+    source = ./themes;
+    recursive = true;
+  };
 
-  # home.file.".config/fcitx5/conf/classicui.conf".source = ./classicui.conf;
+  home.file.".config/fcitx5/conf/classicui.conf".source = ./classicui.conf;
 
   # Chinese input method
   i18n.inputMethod = {
