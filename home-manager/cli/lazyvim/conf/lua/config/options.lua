@@ -8,7 +8,7 @@
 
 -- Neovide config
 local alpha = function()
-  return string.format("%x", math.floor(255 * vim.g.transparency or 0.95))
+    return string.format("%x", math.floor((255 * vim.g.transparency) or 0.95))
 end
 if vim.g.neovide then
     vim.g.neovide_scale_factor = 0.75
@@ -23,6 +23,5 @@ if vim.g.neovide then
 end
 
 vim.g.mapleader = " "
-vim.g.mouse = null
-vim.wo.relativenumber = false
-
+-- vim.g.mouse = null
+vim.wo.relativenumber = true

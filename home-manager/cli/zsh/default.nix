@@ -5,17 +5,20 @@
       enable = true;
       plugins = [
         { name = "zsh-users/zsh-autosuggestions"; }
+        { name = "zsh-users/zsh-syntax-highlighting"; }
       ];
     };
-    initExtra = ''
+    initContent = ''
       # set env vars
       export EDITOR=vim
       export GPG_TTY=$(tty)
-      gpg-connect-agent updatestartuptty /bye >/dev/null
+      # gpg-connect-agent updatestartuptty /bye >/dev/null
 
       alias j="just"
       alias cf="cf-tool"
       alias y="yadm"
+
+      neofetch
 
       # Other package generated hook
     '';

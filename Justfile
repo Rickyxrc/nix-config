@@ -36,3 +36,6 @@ clean-package:
 
 rclone:
   rclone sync ~/archive-zipped onedrive:/code-archive --transfers 1 --progress
+
+darwin-build:
+  sudo nix run nix-darwin#darwin-rebuild --extra-experimental-features nix-command --extra-experimental-features flakes -- switch --flake .

@@ -1,18 +1,16 @@
 return {
-  "mason.nvim",
-  enabled = false,
-  opts = {
-    ensure_installed = {
-      "lua-language-server",
-      "pyright",
-      "nil",
-      "pylint",
-      "shfmt",
-      "deno",
-      "json-lsp",
-      "omnisharp",
-      "ast-grep",
+    "mason.nvim",
+    enabled = true,
+    opts = {
+        ensure_installed = {
+            "lua-language-server",
+            "pyright",
+            "pylint",
+            "shfmt",
+            "deno",
+            "json-lsp",
+            "omnisharp",
+            "ast-grep",
+        },
     },
-  },
 }
-

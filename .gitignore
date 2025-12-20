@@ -3,3 +3,4 @@
 
 # apple plist file
 *.plist
+.DS_Store
