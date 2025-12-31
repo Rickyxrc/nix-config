@@ -10,7 +10,7 @@
     };
     initContent = ''
       # set env vars
-      export EDITOR=vim
+      export EDITOR=nvim
       export GPG_TTY=$(tty)
       # gpg-connect-agent updatestartuptty /bye >/dev/null
 
@@ -18,7 +18,8 @@
       alias cf="cf-tool"
       alias y="yadm"
 
-      neofetch
+      # neofetch
+      # NOO, it takes too long time
 
       # Other package generated hook
     '';

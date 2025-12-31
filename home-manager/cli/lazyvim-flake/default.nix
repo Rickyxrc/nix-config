@@ -1,0 +1,51 @@
+{ inputs, pkgs, ... }:
+{
+  imports = [ inputs.lazyvim.homeManagerModules.default ];
+
+  programs.lazyvim = {
+    enable = true;
+    extras = {
+      lang = {
+        nix.enable = true;
+        rust.enable = true;
+      };
+    };
+
+    ignoreBuildNotifications = true;
+
+    extraPackages = with pkgs; [
+      tree-sitter
+
+      # lua language
+      lua5_1 # lua support
+      luarocks # package manager of lua language
+      lua-language-server # lua language server
+
+      # nix language
+      nil # nix language server
+      statix # nix lint and suggestion
+      nixfmt # nix formatter
+
+      shfmt
+      stylua
+      ast-grep
+
+      imagemagick # image converter
+    ];
+
+    config = {
+      autocmds = ''
+        vim.api.nvim_create_autocmd("FocusLost", {
+          command = "silent! wa",
+          desc = "Auto-save on focus loss",
+        })
+      '';
+    };
+
+    plugins = {
+      git-blame = ''return {"f-person/git-blame.nvim"}'';
+      # tabout = builtins.readFile ./conf/lua/plugins/tabout.lua;
+      dashboard = builtins.readFile ./conf/lua/plugins/tabout.lua;
+    };
+  };
+}

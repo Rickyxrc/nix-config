@@ -63,6 +63,8 @@
       url = "github:nix-darwin/nix-darwin";
       inputs.nixpkgs.follows = "nixpkgs";
     };
+
+    lazyvim.url = "github:pfassina/lazyvim-nix";
   };
   outputs = inputs: import ./outputs inputs;
 }

@@ -17,8 +17,10 @@
     tree-sitter # required by treesitter
     ast-grep # Useful lsp
     rust-analyzer # rust lsp
+    rustc
     lua-language-server # lol.
     nil # nix lsp
     fzf # file finder
+    nixfmt # nix formatter
   ];
 }

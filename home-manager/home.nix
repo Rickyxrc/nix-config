@@ -15,7 +15,7 @@
     ./cli/starship
     ./cli/bash
     ./cli/cf-tool
-    ./cli/atcodercli
+    # ./cli/atcodercli
     ./cli/zsh
     ./cli/direnv
     ./cli/calcurse
@@ -36,20 +36,20 @@
       permittedInsecurePackages = [
         "electron-25.9.0"
       ];
-      allowUnsupportedSystem = true;
-      allowBroken = true;
+      # allowUnsupportedSystem = true;
+      # allowBroken = true;
     };
   };
 
   home = {
     username = "ricky";
-    homeDirectory = "/home/ricky";
+    homeDirectory = "/Users/ricky";
   };
 
   home.packages = with pkgs; [
     tree # show filetree in system
     neofetch # show colorful system status in terminal
-    nodejs # required by vimPlugins.coc-nvim
+    # nodejs # required by vimPlugins.coc-nvim
     # gcc # idk why install it globally.
     # v2raya # Everyone knows why chinese developers need it.
     lazygit # Terminal UI for git.

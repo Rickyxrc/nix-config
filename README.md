@@ -9,6 +9,7 @@ My nixos config.
 Now this config have these hosts:
 
 - `ricky@ricky-nixos-mi-laptop` My laptop, contains full desktop environment and software.
+- `ricky@ricky-mac` My mac laptop, contains command line interface.
 
 ## To do
 
