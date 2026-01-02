@@ -1,8 +1,9 @@
 # NOTE: https://github.com/ryan4yin/nix-config/tree/main/secrets
 
-{ inputs, ... }: {
+{ agenix, ... }:
+{
   imports = [
-    inputs.agenix.nixosModules.default
+    agenix.nixosModules.default
   ];
 
   age.identityPaths = [

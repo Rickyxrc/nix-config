@@ -37,7 +37,8 @@
       homeConfigurations = {
         "ricky@ricky-nixos-mi-laptop" = home-manager.lib.homeManagerConfiguration {
           inherit pkgs;
-          extraSpecialArgs = { inherit inputs outputs; };
+        # extraSpecialArgs = { inherit inputs outputs; };
+        # WARN: DON'T USE THIS!
           modules = [
             hyprland.homeManagerModules.default
             homeage.homeManagerModules.homeage
@@ -47,7 +48,8 @@
 
         "ricky@ricky-mac" = home-manager.lib.homeManagerConfiguration {
           inherit pkgs;
-          extraSpecialArgs = { inherit inputs outputs; };
+        # extraSpecialArgs = { inherit inputs outputs; };
+        # WARN: DON'T USE THIS!
           modules = [
             homeage.homeManagerModules.homeage
             ./home-manager/home.nix

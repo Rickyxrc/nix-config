@@ -1,4 +1,4 @@
-{ inputs, config, ... }:
+{ secrets, config, ... }:
 {
   homeage = {
     identityPaths = [ "~/.ssh/id_ed25519" ];
@@ -9,7 +9,7 @@
     # symlinks = [ "${config.xdg.configHome}/test" ];
     # };
     file."rclone.age" = {
-      source = "${inputs.secrets}/rclone.age";
+      source = "${secrets}/rclone.age";
       symlinks = [ "${config.xdg.configHome}/rclone/rclone.conf" ];
     };
   };

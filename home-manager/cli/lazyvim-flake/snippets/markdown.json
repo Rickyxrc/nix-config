@@ -1,0 +1,9 @@
+{
+  "Test Snippet": {
+    "prefix": "TEST_SNIPPET_TEST",
+    "description": "A Testing snippet to test LuaSnip",
+    "body": [
+      "Hellooooo world!"
+    ]
+  }
+}

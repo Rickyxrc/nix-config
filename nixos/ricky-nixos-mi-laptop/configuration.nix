@@ -5,12 +5,11 @@
 { inputs, pkgs, ... }:
 
 {
-  imports =
-    [
-      # Include the results of the hardware scan.
-      # /etc/nixos/hardware-configuration.nix
-      ./hardware-configuration.nix
-    ];
+  imports = [
+    # Include the results of the hardware scan.
+    # /etc/nixos/hardware-configuration.nix
+    ./hardware-configuration.nix
+  ];
 
   # Bootloader.
   boot.loader.systemd-boot.enable = true;
@@ -40,7 +39,6 @@
     LC_TIME = "zh_CN.UTF-8";
   };
 
-
   # Configure keymap in X11
   services.xserver = {
     layout = "us";
@@ -56,7 +54,12 @@
   users.users.ricky = {
     isNormalUser = true;
     description = "ricky";
-    extraGroups = [ "networkmanager" "wheel" "input" "audio" ];
+    extraGroups = [
+      "networkmanager"
+      "wheel"
+      "input"
+      "audio"
+    ];
     packages = [ ];
   };
   users.users.ricky.shell = pkgs.zsh;

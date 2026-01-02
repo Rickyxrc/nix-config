@@ -2,7 +2,7 @@
 # Use this to configure your home environment (it replaces ~/.config/nixpkgs/home.nix)
 {
   pkgs,
-  inputs,
+  nix-darwin,
   ...
 }:
 {
@@ -23,6 +23,8 @@
     # ./cli/lazyvim/lazyvimv2.nix
     # ./cli/lazyvim-flake
     ./cli/lazyvim-flake
+
+    ./gui/kitty
   ];
 
   # nixpkgs = {
@@ -39,6 +41,9 @@
   };
 
   home.packages = with pkgs; [
+    nix-darwin # nix-darwin to manage the env
+
+    hmcl
     git # git
     tree # show filetree in system
     neofetch # show colorful system status in terminal
@@ -66,7 +71,23 @@
     # rustfmt # Rust code formatter
     qbittorrent-enhanced # A nice torrent client with GUI
     # veracrypt
+
+    # TODO: make a choice
+    dooit # Todo application in cli
+    # calcure # Calendar and todo list
+
+    tldr # Too long dont read | Document for commands
+    duf # Disk space monitor
+    fzf # Fuzzy file match
+    zoxide # Advanced cd
+    ast-grep # ast rewrite
+
+    gemini-cli # Gemini code assistant
+
+    nix-output-monitor # Pretty output
+    texliveFull
   ];
+
   # Enable home-manager
   # programs.home-manager.enable = true;
 

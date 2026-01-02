@@ -1,9 +1,11 @@
-{ config, pkgs, ... }:
+{ pkgs, ... }:
 
 {
+  nix.settings.experimental-features = "nix-command flakes";
+
   # List packages installed in system profile. To search by name, run:
   # $ nix-env -qaP | grep wget
-  environment.systemPackages = [];
+  environment.systemPackages = [ ];
 
   networking.hostName = "ricky-mac"; # Define your hostname.
 

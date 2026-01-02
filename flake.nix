@@ -25,7 +25,7 @@
     };
 
     atcodercli = {
-      url = "github:rickyxrc/at-cli/tags/v0.5.5";
+      url = "github:rickyxrc/at-cli";
       inputs.nixpkgs.follows = "nixpkgs";
     };
 
@@ -59,12 +59,19 @@
     # url = "git+ssh://git@github.com/rickyxrc/passwords";
     # flake = false;
     # };
+
     nix-darwin = {
       url = "github:nix-darwin/nix-darwin";
       inputs.nixpkgs.follows = "nixpkgs";
     };
 
-    lazyvim.url = "github:pfassina/lazyvim-nix";
+    lazyvim = {
+      url = "github:pfassina/lazyvim-nix";
+    };
+
+    flake-utils = {
+      url = "github:numtide/flake-utils";
+    };
   };
   outputs = inputs: import ./outputs inputs;
 }

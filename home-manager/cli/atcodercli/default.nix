@@ -1,13 +1,8 @@
 {
-  inputs,
   pkgs,
-  outputs,
-  lib,
-  specialArgs,
-  config,
-  options,
-  modulesPath,
+  atcodercli,
+  ...
 }:
 {
-  # home.packages = [ inputs.atcodercli.packages.${pkgs.system}.default ]; # flake atcodercli packaged by rickyxrc
+  home.packages = [ atcodercli.packages.${pkgs.system}.default ];
 }

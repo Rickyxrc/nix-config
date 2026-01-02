@@ -1,6 +1,6 @@
-{ inputs, pkgs, ... }:
+{ lazyvim, pkgs, ... }:
 {
-  imports = [ inputs.lazyvim.homeManagerModules.default ];
+  imports = [ lazyvim.homeManagerModules.default ];
 
   programs.lazyvim = {
     enable = true;
@@ -8,6 +8,10 @@
       lang = {
         nix.enable = true;
         rust.enable = true;
+        json.enable = true;
+      };
+      coding = {
+        luasnip.enable = true;
       };
     };
 
@@ -15,6 +19,9 @@
 
     extraPackages = with pkgs; [
       tree-sitter
+
+      # json
+      vscode-json-languageserver
 
       # lua language
       lua5_1 # lua support
@@ -43,9 +50,16 @@
     };
 
     plugins = {
-      git-blame = ''return {"f-person/git-blame.nvim"}'';
+      git-blame = builtins.readFile ./conf/lua/plugins/git-blame.lua;
       # tabout = builtins.readFile ./conf/lua/plugins/tabout.lua;
       dashboard = builtins.readFile ./conf/lua/plugins/tabout.lua;
+      # Luasnip = builtins.readFile ./conf/lua/plugins/Luasnip.lua;
     };
+  };
+
+  # Code snippets (VSCode style)
+  home.file.".config/nvim/snippets" = {
+    source = ./snippets;
+    recursive = true;
   };
 }

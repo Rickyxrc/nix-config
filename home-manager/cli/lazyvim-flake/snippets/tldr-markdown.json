@@ -1,0 +1,22 @@
+{
+  "Alias Page(Zh)": {
+    "prefix": "tl-page",
+    "description": "Alias Page",
+    "body": [
+      "# {$1:example}",
+      "",
+      "> 此命令为 `{$2:example}` 的别名。",
+      "",
+      "- 查看原命令的文档：",
+      "",
+      "`tldr {$2:example}`"
+    ]
+  },
+  "More Info(Zh)": {
+    "prefix": "tl-more-info",
+    "description": "More Info",
+    "body": [
+      "> 更多信息：<{$1:https://example.com}>。"
+    ]
+  }
+}

@@ -1,0 +1,20 @@
+{
+  "name": "ricky-snippet",
+  "engines": {},
+  "contributes": {
+    "snippets": [
+      {
+        "language": [
+          "markdown"
+        ],
+        "path": "./markdown.json"
+      },
+      {
+        "language": [
+          "markdown"
+        ],
+        "path": "./tldr-markdown.json"
+      }
+    ]
+  }
+}
