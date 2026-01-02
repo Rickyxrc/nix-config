@@ -12,6 +12,8 @@
       j = "just";
       cf = "cf-tool";
       y = "yazi";
+      music = "~/.shell-scripts/background-music.sh&";
+      ta = "tmux attach -t \"\${$(tmux ls | fzf)%%:*}\"";
     };
     history.size = 100000;
     initContent = ''
@@ -28,4 +30,6 @@
       # Other package generated hook
     '';
   };
+
+  home.file.".shell-scripts/background-music.sh".source = ./scripts/background-music.sh;
 }
