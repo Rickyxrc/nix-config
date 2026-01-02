@@ -17,6 +17,10 @@
     };
     history.size = 100000;
     initContent = ''
+      DISABLE_AUTO_UPDATE="true"
+      DISABLE_MAGIC_FUNCTIONS="true"
+      DISABLE_COMPFIX="true"
+
       # set env vars
       export EDITOR=nvim
       export GPG_TTY=$(tty)

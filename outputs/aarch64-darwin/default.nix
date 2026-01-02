@@ -22,7 +22,7 @@ in
           home-manager = {
             useGlobalPkgs = true;
             useUserPackages = true;
-            users.ricky = ../../home-manager/home-minimal-for-test.nix;
+            users.ricky = ../../home-manager/home-mac.nix;
             extraSpecialArgs = inputs;
           };
         }

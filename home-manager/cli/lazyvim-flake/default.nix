@@ -54,6 +54,10 @@
       # tabout = builtins.readFile ./conf/lua/plugins/tabout.lua;
       dashboard = builtins.readFile ./conf/lua/plugins/tabout.lua;
       # Luasnip = builtins.readFile ./conf/lua/plugins/Luasnip.lua;
+
+      tokyonight = builtins.readFile ./conf/lua/plugins/tokyonight.lua;
+      # The theme itself supported transparent.
+      # transparent = builtins.readFile ./conf/lua/plugins/transparent.lua;
     };
   };
 
