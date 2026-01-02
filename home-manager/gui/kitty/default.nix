@@ -1,8 +1,14 @@
-{ lib, ... }:
+{ lib, pkgs, ... }:
 {
+  programs.tmux.enable = true;
+
   programs.kitty = {
     enable = true;
     extraConfig = lib.fileContents ./kitty.conf;
+    settings = {
+      # shell = "${pkgs.tmux}/bin/tmux";
+      shell = "zsh";
+    };
   };
 
   home.file = {

@@ -51,5 +51,6 @@
 
     nix-output-monitor # Pretty output
     # texliveFull
+    nixpkgs-review # nixpkgs pullrequest reviewer
   ];
 }

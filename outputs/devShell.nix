@@ -10,6 +10,7 @@ flake-utils.lib.eachDefaultSystem (
         defaultPackages = with pkgs; [
           pre-commit
           just
+          nix-output-monitor
         ];
       in
       {
