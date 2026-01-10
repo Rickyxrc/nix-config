@@ -9,6 +9,8 @@
         nix.enable = true;
         rust.enable = true;
         json.enable = true;
+
+        astro.enable = false;
       };
       coding = {
         luasnip.enable = true;
@@ -33,21 +35,24 @@
       statix # nix lint and suggestion
       nixfmt # nix formatter
 
-      shfmt
+      # astro language
+      # TODO: make a correct astro lang
+      # astro-language-server
+      # vtsls
+
+      shfmt # Shell parser and formatter
       stylua
       ast-grep
 
       imagemagick # image converter
     ];
 
-    config = {
-      autocmds = ''
-        vim.api.nvim_create_autocmd("FocusLost", {
-          command = "silent! wa",
-          desc = "Auto-save on focus loss",
-        })
-      '';
-    };
+    config.autocmds = ''
+      vim.api.nvim_create_autocmd("FocusLost", {
+        command = "silent! wa",
+        desc = "Auto-save on focus loss",
+      })
+    '';
 
     plugins = {
       git-blame = builtins.readFile ./conf/lua/plugins/git-blame.lua;

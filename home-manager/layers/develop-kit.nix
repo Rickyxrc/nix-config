@@ -48,9 +48,12 @@
     ast-grep # ast rewrite
 
     gemini-cli # Gemini code assistant
+    opencode # Open sourced code assistant
 
     nix-output-monitor # Pretty output
     # texliveFull
     nixpkgs-review # nixpkgs pullrequest reviewer
+
+    gnupg # GPG
   ];
 }
