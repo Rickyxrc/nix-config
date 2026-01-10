@@ -14,14 +14,13 @@
     ../cli/pass
     ../cli/lazyvim-flake
     ../gui/kitty
+    ../cli/fastfetch
   ];
 
   home.packages = with pkgs; [
     # hmcl # Minecraft Launcher
     git # git
     tree # show filetree in system
-
-    fastfetch # quick neofetch
 
     lazygit # Terminal UI for git.
     go-musicfox # Netease music player in terminal.
