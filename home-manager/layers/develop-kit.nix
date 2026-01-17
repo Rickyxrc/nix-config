@@ -54,5 +54,7 @@
     nixpkgs-review # nixpkgs pullrequest reviewer
 
     gnupg # GPG
+
+    serve # serve static website
   ];
 }

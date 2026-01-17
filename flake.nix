@@ -72,6 +72,12 @@
     flake-utils = {
       url = "github:numtide/flake-utils";
     };
+
+    yazi = {
+      url = "github:sxyazi/yazi";
+      inputs.flake-utils.follows = "flake-utils";
+      inputs.nixpkgs.follows = "nixpkgs";
+    };
   };
   outputs = inputs: import ./outputs inputs;
 }

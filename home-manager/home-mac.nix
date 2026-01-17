@@ -1,6 +1,7 @@
 { nix-darwin, ... }:
 {
   imports = [
+    ../secrets/home.nix
     ./layers/develop-kit.nix
     ./layers/gaming.nix
   ];

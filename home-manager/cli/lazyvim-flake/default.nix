@@ -1,3 +1,4 @@
+# NOTE: refer to https://github.com/pfassina/lazyvim-nix/wiki/LazyVim-Extras for docs
 { lazyvim, pkgs, ... }:
 {
   imports = [ lazyvim.homeManagerModules.default ];
@@ -11,6 +12,9 @@
         json.enable = true;
 
         astro.enable = false;
+
+        typescript.enable = true;
+        # vue.enable = true;
       };
       coding = {
         luasnip.enable = true;
@@ -38,7 +42,7 @@
       # astro language
       # TODO: make a correct astro lang
       # astro-language-server
-      # vtsls
+      vtsls
 
       shfmt # Shell parser and formatter
       stylua
