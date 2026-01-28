@@ -1,4 +1,4 @@
-{ nix-darwin, ... }:
+{ nix-darwin, pkgs, ... }:
 {
   imports = [
     ../secrets/home.nix
@@ -13,6 +13,7 @@
 
   home.packages = [
     nix-darwin # nix-darwin to manage the env
+    # pkgs.obsidian # obsidian
   ];
 
   # https://nixos.wiki/wiki/FAQ/When_do_I_update_stateVersion

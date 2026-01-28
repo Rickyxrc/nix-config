@@ -2,6 +2,7 @@
 
 {
   nix.settings.experimental-features = "nix-command flakes";
+  nix.settings.trusted-users = [ "ricky" ];
 
   # List packages installed in system profile. To search by name, run:
   # $ nix-env -qaP | grep wget

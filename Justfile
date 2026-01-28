@@ -1,3 +1,5 @@
+dr: darwin-build
+
 deploy: switch-system switch-home
 
 switch-system:
@@ -39,6 +41,3 @@ rclone:
 
 darwin-build:
   sudo darwin-rebuild switch --flake . |& nom
-
-dr: darwin-build
-

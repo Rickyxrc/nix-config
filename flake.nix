@@ -51,7 +51,7 @@
     };
 
     # NOTE: you can't deploy this flake bacause you can't access these repos.
-    # These are my private repos, includes my password and secret files.
+    # These are my private repos, including my password and secret files.
     secrets.url = "git+ssh://git@github.com/rickyxrc/nix-secrets";
 
     # NOTE: find a beter way to storage this
@@ -79,5 +79,6 @@
       inputs.nixpkgs.follows = "nixpkgs";
     };
   };
+
   outputs = inputs: import ./outputs inputs;
 }

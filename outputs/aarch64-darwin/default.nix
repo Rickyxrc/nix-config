@@ -1,17 +1,22 @@
 {
   home-manager,
   nix-darwin,
+  nixpkgs,
   ...
 }@inputs:
-let
-  system = "aarch64-darwin";
-in
 {
   darwinConfigurations = {
     "ricky-mac" = nix-darwin.lib.darwinSystem {
-      inherit system;
+      system = "aarch64-darwin";
       modules = [
         ../../nixos/ricky-mac/configuration.nix
+        {
+          nixpkgs = {
+            config = {
+              allowUnfree = true;
+            };
+          };
+        }
         home-manager.darwinModules.home-manager
         {
           users.users.ricky = {
@@ -21,6 +26,7 @@ in
 
           home-manager = {
             useGlobalPkgs = true;
+
             useUserPackages = true;
             users.ricky = ../../home-manager/home-mac.nix;
             extraSpecialArgs = inputs;

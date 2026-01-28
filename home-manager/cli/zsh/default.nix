@@ -6,7 +6,7 @@ in
   programs.zsh = {
     enable = true;
 
-    # manual added completion code
+    # NOTE: I will manual added completion code(below)
     enableCompletion = false;
 
     # NOTE: Alternative as below: 'zinit'
@@ -16,15 +16,14 @@ in
       { name = "zsh-users/zsh-syntax-highlighting"; }
     ];
 
-    shellAliases = {
-      j = "just";
-      cf = "cf-tool";
-      y = "yazi";
+    shellAliases = with pkgs; {
+      j = lib.getExe just;
+      # cf = "cf-tool";
+      y = lib.getExe yazi;
       music = "~/.shell-scripts/background-music.sh&";
       ta = "tmux attach -t \"\${$(tmux ls | fzf)%%:*}\"";
     };
     history.size = 1000;
-    # initContent =  lib.mkBefore "";
 
     initContent = lib.mkMerge [
       (if debug_zsh_startup then (lib.mkBefore "zmodload zsh/zprof") else lib.mkDefault "")
@@ -71,7 +70,7 @@ in
 
         # set env vars
         export EDITOR=nvim
-        export GPG_TTY=$(tty)
+        # export GPG_TTY=$(tty)
         # gpg-connect-agent updatestartuptty /bye >/dev/null
 
         eval "$(zoxide init zsh --cmd cd)" # init zoxide
@@ -82,6 +81,7 @@ in
 
         # Other package generated hook
       '')
+
       (if debug_zsh_startup then (lib.mkAfter "zprof") else lib.mkDefault "")
     ];
 

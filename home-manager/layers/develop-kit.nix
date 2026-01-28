@@ -15,16 +15,17 @@
     ../cli/lazyvim-flake
     ../gui/kitty
     ../cli/fastfetch
+    ../cli/eza
   ];
 
   home.packages = with pkgs; [
-    # hmcl # Minecraft Launcher
     git # git
     tree # show filetree in system
 
     lazygit # Terminal UI for git.
-    go-musicfox # Netease music player in terminal.
-    htop # Process monitor in TUI
+    # go-musicfox # Netease music player in terminal.
+    # htop # Process monitor in TUI
+    btop # Better htop in TUI
     unzip # I dont have this until I add this line lol
     wget # LOL too
     asciinema # Terminal Recorder
@@ -37,8 +38,10 @@
     yadm # Yet another dotfile manager
     cowsay # Just for fun
     # qbittorrent-enhanced # A nice torrent client with GUI
+    restic # Backup Application
+    fd # Good find tool.
 
-    dooit # Todo application in cli
+    # dooit # Todo application in cli
 
     tldr # Too long dont read | Document for commands
     duf # Disk space monitor
